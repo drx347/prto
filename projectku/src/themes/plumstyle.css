@@ -1,0 +1,25 @@
+[data-palette="plum"] .siteOverlayLayer--theme {
+  background:
+    radial-gradient(circle at 18% 76%, rgba(var(--p-pink), 0.15) 0 20px, transparent 22px),
+    radial-gradient(circle at 24% 78%, rgba(var(--p-lav), 0.12) 0 20px, transparent 22px),
+    radial-gradient(circle at 82% 22%, rgba(var(--p-pink), 0.14) 0 22px, transparent 24px),
+    radial-gradient(circle at 76% 24%, rgba(var(--p-lav), 0.12) 0 22px, transparent 24px),
+    radial-gradient(circle at 78% 18%, rgba(var(--p-mint), 0.1) 0 10px, transparent 12px),
+    radial-gradient(620px 400px at 50% 46%, rgba(var(--p-lav), 0.08), transparent 72%);
+}
+
+[data-palette="plum"] .heroDecoTrail.trailA,
+[data-palette="plum"] .heroDecoTrail.trailB {
+  background:
+    radial-gradient(34% 34% at 24% 74%, rgba(var(--p-lav), 0.14), transparent 72%),
+    radial-gradient(40% 40% at 74% 24%, rgba(var(--p-pink), 0.14), transparent 74%),
+    radial-gradient(58% 58% at 52% 52%, rgba(var(--p-mint), 0.06), transparent 82%);
+}
+
+[data-palette="plum"] .heroDecoMotif {
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 38% 50%, rgba(var(--p-pink), 0.24) 0 22%, transparent 23%),
+    radial-gradient(circle at 64% 50%, rgba(var(--p-lav), 0.2) 0 20%, transparent 21%),
+    linear-gradient(140deg, transparent 46%, rgba(var(--p-mint), 0.12) 47% 50%, transparent 51%);
+}

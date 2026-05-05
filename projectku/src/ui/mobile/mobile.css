@@ -1,0 +1,74 @@
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+}
+
+/* iOS text autosizing + input zoom */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+.uiMobile {
+  padding-left: var(--safe-left);
+  padding-right: var(--safe-right);
+}
+
+.uiMobile .navV2Inner {
+  padding-top: calc(1rem + var(--safe-top));
+  padding-bottom: 0.85rem;
+}
+
+.uiMobile .navSpacer {
+  height: calc(76px + var(--safe-top));
+}
+
+.uiMobile #home,
+.uiMobile #about,
+.uiMobile #portfolio,
+.uiMobile #contact,
+.uiMobile #faq {
+  scroll-margin-top: calc(92px + var(--safe-top));
+}
+
+.uiMobile .app,
+.uiMobile .heroV2 {
+  min-height: 100svh;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .uiMobile .card:hover,
+  .uiMobile .iconBtn:hover,
+  .uiMobile .btn2:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+.homeRoot--mobile .heroButtons {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.homeRoot--mobile .btn2 {
+  width: 100%;
+  justify-content: center;
+}
+
+.homeRoot--mobile .chipRow {
+  gap: 10px;
+}
+
+.homeRoot--mobile .eduRibbon {
+  display: none;
+}
+
+.homeRoot--mobile .chip {
+  padding: 10px 12px;
+}
+
+.homeRoot--mobile .inputV2,
+.homeRoot--mobile .textareaV2 {
+  font-size: 16px;
+}

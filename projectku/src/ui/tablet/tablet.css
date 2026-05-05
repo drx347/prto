@@ -1,0 +1,51 @@
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+}
+
+.uiTablet {
+  padding-left: var(--safe-left);
+  padding-right: var(--safe-right);
+}
+
+.uiTablet .navV2Inner {
+  padding-top: calc(1rem + var(--safe-top));
+}
+
+.uiTablet .navSpacer {
+  height: calc(76px + var(--safe-top));
+}
+
+.uiTablet #home,
+.uiTablet #about,
+.uiTablet #portfolio,
+.uiTablet #contact,
+.uiTablet #faq {
+  scroll-margin-top: calc(92px + var(--safe-top));
+}
+
+.uiTablet .app,
+.uiTablet .heroV2 {
+  min-height: 100svh;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .uiTablet .card:hover,
+  .uiTablet .iconBtn:hover,
+  .uiTablet .btn2:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+.homeRoot--tablet .heroSubtitle {
+  max-width: 62ch;
+  font-size: 1.02rem;
+}
+
+.platformIOS .homeRoot--tablet .inputV2,
+.platformIOS .homeRoot--tablet .textareaV2 {
+  font-size: 16px;
+}
