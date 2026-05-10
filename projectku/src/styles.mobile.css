@@ -174,11 +174,6 @@
     line-height: 1.45;
   }
 
-  .appPlayerShell.isWelcome {
-    width: min(360px, calc(100vw - 20px));
-    bottom: calc(8px + var(--safe-bottom));
-  }
-
   .nowPlayingToast {
     top: calc(56px + var(--safe-top));
     right: calc(10px + var(--safe-right));
@@ -557,107 +552,6 @@
     opacity: 0.24;
   }
 
-  .appPlayerShell.isWelcome {
-    width: min(520px, calc(100vw - 24px));
-    bottom: calc(12px + var(--safe-bottom));
-  }
-
-  .appPlayerShell.isHeader {
-    top: calc(8px + var(--safe-top));
-    right: calc(10px + var(--safe-right));
-  }
-
-  .miniAudioDockBtn {
-    min-width: 80px;
-    min-height: 38px;
-    padding: 5px 7px;
-    gap: 7px;
-    border-radius: 10px;
-  }
-
-  .miniAudioDockGlyph {
-    width: 24px;
-    height: 24px;
-    border-radius: 7px;
-  }
-
-  .miniAudioDockGlyph svg {
-    width: 14px;
-    height: 14px;
-  }
-
-  .miniAudioDockLabel {
-    font-size: 0.5rem;
-  }
-
-  .miniAudioDockMeta {
-    font-size: 0.7rem;
-  }
-
-  .miniAudioDockIndicator {
-    width: 5px;
-    height: 5px;
-  }
-
-  .miniAudioDockPopover {
-    right: -2px;
-    width: min(214px, calc(100vw - 20px));
-    padding: 10px;
-    border-radius: 12px;
-  }
-
-  .miniAudioDockHeader {
-    gap: 8px;
-    margin-bottom: 10px;
-  }
-
-  .miniAudioDockEyebrow {
-    font-size: 0.68rem;
-  }
-
-  .miniAudioDockTrack {
-    font-size: 0.74rem;
-  }
-
-  .miniAudioDockTrackMeta {
-    font-size: 0.68rem;
-  }
-
-  .miniAudioDockMuteChip {
-    padding: 4px 7px;
-    font-size: 0.68rem;
-  }
-
-  .miniAudioDockValue {
-    min-width: 36px;
-    padding: 3px 6px;
-    font-size: 0.64rem;
-  }
-
-  .miniAudioDockSliderRow {
-    grid-template-columns: 24px minmax(0, 1fr);
-    gap: 8px;
-  }
-
-  .miniAudioDockSliderIcon {
-    width: 24px;
-    height: 24px;
-    border-radius: 8px;
-  }
-
-  .miniAudioDockSliderIcon svg {
-    width: 13px;
-    height: 13px;
-  }
-
-  .miniAudioDockFooter {
-    margin-top: 8px;
-  }
-
-  .miniAudioDockPopover input[type="range"] {
-    height: 10px;
-  }
-
   .scrollTopBtn {
     right: calc(12px + var(--safe-right));
     bottom: calc(12px + var(--safe-bottom));
@@ -912,14 +806,4 @@
     grid-template-columns: 1fr;
   }
 
-  .bgFx::before {
-    animation: none;
-    opacity: 0.22;
-  }
-
-  .bgFx::after {
-    filter: blur(26px) saturate(130%);
-    opacity: 0.6;
-    animation-duration: 22s;
-  }
 }

@@ -7,7 +7,7 @@ export const profile = {
     "I enjoy making things that are both useful and fun. Whether it's a Discord bot that flirts with chaos or a clean-looking dashboard, I'm all about learning through building.",
   yearsExperience: 3,
   heroChips: ["Next.js", "React", "Lua", "Vercel", "Tailwind CSS", "Discord.js"],
-  aboutBadges: ["UI Motion", "Interactive Web", "Bot Systems"],
+  aboutBadges: [],
   discordHandle: "@exotickic",
   discordInvite: "https://discord.com/users/975269168184168539",
   education: [
@@ -43,7 +43,7 @@ export const profile = {
     "Vercel",
   ],
   about: [
-    "Saya adalah developer yang fokus pada UI modern, performa, dan pengalaman pengguna.",
+    "Saya adalah Mahasiswa Universitas Terbuka (UT) dan juga developer yang fokus pada UI modern, performa, dan pengalaman pengguna.",
     "Saya suka mengubah ide kompleks menjadi antarmuka yang halus dan enak dipakai.",
     "Saat ini saya mendalami animasi, WebGL, dan pengalaman web interaktif.",
   ],
@@ -55,6 +55,22 @@ export const profile = {
     { label: "Twitter", href: "https://twitter.com/imantonygasing" },
   ],
   projects: [
+    {
+      title: "ClarityX",
+      description:
+        "A clean web project focused on clarity, presentation, and fast access to the main experience.",
+      tags: ["React", "Vite", "Vercel"],
+      showcase: ["Clean interface", "Fast deployment", "Responsive web"],
+      links: [{ label: "Open Web", href: "https://clarity-x-vercel.app" }],
+    },
+    {
+      title: "Sharpness AI",
+      description:
+        "An AI-focused web app for improving image sharpness with a simple and direct user flow.",
+      tags: ["AI", "React", "Vercel"],
+      showcase: ["Image enhancement", "Simple upload flow", "AI utility"],
+      links: [{ label: "Open Web", href: "https://sharpnessai.vercel.app" }],
+    },
     {
       title: "Hello English",
       description:

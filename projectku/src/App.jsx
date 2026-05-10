@@ -166,20 +166,17 @@ export default function App() {
           !entered ? "welcomeActive" : "",
         ].join(" ")}
       >
-        <div className={`appPlayerShell${entered ? " isHeader" : " isWelcome"}`}>
-          <MiniAudioPlayer
-            tracks={musicTracks}
-            variant={entered ? "compact" : "audioOnly"}
-            autoPlay
-            onTrackChange={(track, meta) => {
-              setPlayerSnapshot({
-                track,
-                index: meta?.index ?? 0,
-                total: meta?.total ?? musicTracks.length,
-              });
-            }}
-          />
-        </div>
+        <MiniAudioPlayer
+          tracks={musicTracks}
+          autoPlay
+          onTrackChange={(track, meta) => {
+            setPlayerSnapshot({
+              track,
+              index: meta?.index ?? 0,
+              total: meta?.total ?? musicTracks.length,
+            });
+          }}
+        />
 
         <div
           className={`nowPlayingToast${entered && nowPlayingToast.visible ? " isVisible" : ""}`}

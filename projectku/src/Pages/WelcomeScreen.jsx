@@ -1,7 +1,5 @@
 import { GithubIcon } from "../components/Icons";
-import { useEffect, useMemo, useState } from "react";
-
-const STORAGE_KEY = "portfolio:bg";
+import { useEffect, useMemo } from "react";
 
 const PALETTES = [
   {
@@ -473,46 +471,14 @@ function WelcomeThemeScene() {
 }
 
 export default function WelcomeScreen({ entered = false, onEnter }) {
-  const defaultPalette = useMemo(() => PALETTES[0], []);
-  const [active, setActive] = useState(defaultPalette.id);
-  const activePalette = useMemo(
-    () => PALETTES.find((palette) => palette.id === active) ?? defaultPalette,
-    [active, defaultPalette]
+  const defaultPalette = useMemo(
+    () => PALETTES.find((palette) => palette.id === "gold") ?? PALETTES[0],
+    []
   );
 
   useEffect(() => {
-    try {
-      const raw = window.localStorage.getItem(STORAGE_KEY);
-      if (!raw) {
-        applyBackgroundVars(defaultPalette);
-        return;
-      }
-      const saved = JSON.parse(raw);
-      if (!saved?.id) return;
-      const palette = PALETTES.find((p) => p.id === saved.id);
-      if (!palette) return;
-      setActive(palette.id);
-      applyBackgroundVars(palette);
-    } catch {
-      applyBackgroundVars(defaultPalette);
-    }
+    applyBackgroundVars(defaultPalette);
   }, [defaultPalette]);
-
-  const onPick = (palette) => {
-    setActive(palette.id);
-    applyBackgroundVars(palette);
-    try {
-      window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ id: palette.id }));
-    } catch {
-      // ignore
-    }
-  };
-
-  const shiftPalette = (direction) => {
-    const activeIndex = PALETTES.findIndex((palette) => palette.id === active);
-    const nextIndex = (activeIndex + direction + PALETTES.length) % PALETTES.length;
-    onPick(PALETTES[nextIndex]);
-  };
 
   return (
     <main
@@ -549,56 +515,6 @@ export default function WelcomeScreen({ entered = false, onEnter }) {
             Enter Portfolio
           </button>
           <p className="welcomeHint muted">Tap/click untuk masuk.</p>
-        </div>
-
-        <div className="welcomePalette" aria-label="Background palette">
-          <p className="welcomePaletteLabel muted">Warna Latar</p>
-          <div className="welcomePaletteControls">
-            <button
-              type="button"
-              className="welcomePaletteShift"
-              onClick={() => shiftPalette(-1)}
-              aria-label="Pilih warna sebelumnya"
-              title="Warna sebelumnya"
-            >
-              &#8249;
-            </button>
-            <div className="welcomePaletteSwatches" role="radiogroup" aria-label="Pick background">
-              {PALETTES.map((p) => {
-                const isActive = p.id === active;
-                return (
-                  <button
-                    key={p.id}
-                    type="button"
-                    className={`welcomeSwatch${isActive ? " isActive" : ""}`}
-                    onClick={() => onPick(p)}
-                    role="radio"
-                    aria-checked={isActive}
-                    aria-label={p.label}
-                    title={p.label}
-                  >
-                    <span
-                      className="welcomeSwatchFill"
-                      style={{
-                        background: `linear-gradient(135deg, ${p.bg}, ${p.bg2})`,
-                      }}
-                    />
-                  </button>
-                );
-              })}
-            </div>
-            <button
-              type="button"
-              className="welcomePaletteShift"
-              onClick={() => shiftPalette(1)}
-              aria-label="Pilih warna berikutnya"
-              title="Warna berikutnya"
-            >
-              &#8250;
-            </button>
-          </div>
-          <p className="welcomePaletteValue">{activePalette.label}</p>
-          <p className="welcomePaletteHint muted">Gunakan tombol panah untuk geser warna cepat.</p>
         </div>
       </div>
     </main>
