@@ -1,0 +1,489 @@
+:root {
+  color-scheme: light !important;
+  --bg: #f7f04c !important;
+  --bg2: #fff8ef !important;
+  --text: #111111 !important;
+  --muted: #3a332d !important;
+  --border: #111111 !important;
+  --border2: #111111 !important;
+  --panel: #fff8ef !important;
+  --panel2: #ffffff !important;
+  --accent: #111111 !important;
+  --accent2: #ff5c8a !important;
+  --accent3: #111111 !important;
+  --p-lav: 157, 103, 255 !important;
+  --p-sky: 90, 167, 255 !important;
+  --p-mint: 48, 213, 200 !important;
+  --p-pink: 255, 92, 138 !important;
+  --premium-gold: 247, 240, 76 !important;
+  --premium-red: 255, 92, 138 !important;
+  --radius: 8px !important;
+  --radius-sm: 6px !important;
+  --shadow: 8px 8px 0 #111111 !important;
+  --shadow2: 12px 12px 0 #111111 !important;
+  --ring: 0 0 0 4px #5aa7ff !important;
+  --neon-glow: none !important;
+  --neo-bg: #f7f04c;
+  --neo-paper: #fff8ef;
+  --neo-ink: #111111;
+  --neo-blue: #5aa7ff;
+  --neo-pink: #ff5c8a;
+  --neo-green: #9dff57;
+  --neo-cyan: #30d5c8;
+  --neo-orange: #ff8c42;
+}
+
+html,
+body {
+  color: var(--neo-ink) !important;
+  background:
+    linear-gradient(90deg, rgba(17, 17, 17, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(17, 17, 17, 0.08) 1px, transparent 1px),
+    var(--neo-bg) !important;
+  background-size: 34px 34px !important;
+}
+
+body::before,
+body::after,
+.siteOverlayLayer--glow,
+.siteOverlayLayer--flow,
+.siteOverlayLayer--theme {
+  display: none !important;
+}
+
+.siteOverlay {
+  z-index: 0 !important;
+}
+
+.siteOverlayLayer--grid {
+  inset: 0 !important;
+  opacity: 1 !important;
+  background-image:
+    linear-gradient(90deg, rgba(17, 17, 17, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(17, 17, 17, 0.08) 1px, transparent 1px) !important;
+  background-size: 34px 34px !important;
+  mask-image: none !important;
+}
+
+.siteOverlayLayer--dots {
+  opacity: 0.2 !important;
+  background-image:
+    radial-gradient(circle, #111111 1px, transparent 2px) !important;
+  background-size: 28px 28px !important;
+  mask-image: none !important;
+}
+
+.app {
+  position: relative;
+  z-index: 1 !important;
+  color: var(--neo-ink) !important;
+  background: transparent !important;
+}
+
+.app::before,
+.app::after {
+  content: none !important;
+}
+
+a {
+  color: inherit !important;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+
+h1,
+h2,
+h3,
+.heroTitle,
+.heroTitleTop,
+.heroTitleBottom,
+.showcaseTitle,
+.h2V2,
+.aboutHeaderName,
+.welcomeTitle,
+.aboutSectionTitle,
+.aboutTopTitle {
+  color: var(--neo-ink) !important;
+  letter-spacing: 0 !important;
+  text-shadow: none !important;
+}
+
+.muted,
+.heroSubtitle,
+.aboutLead,
+.aboutText p,
+.footerText,
+.contactFormNote,
+.nowPlayingToastDetail,
+.aboutHeaderMeta,
+.aboutTopTagline {
+  color: #3a332d !important;
+}
+
+.accentText,
+.welcomeAccent {
+  color: var(--neo-pink) !important;
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+  text-shadow: 3px 3px 0 var(--neo-ink) !important;
+}
+
+.navV2 {
+  padding: 16px 0 !important;
+}
+
+.navV2::before {
+  inset: 10px max(14px, var(--safe-left)) auto max(14px, var(--safe-right)) !important;
+  height: calc(100% - 20px) !important;
+  border: 4px solid var(--neo-ink) !important;
+  border-radius: 8px !important;
+  background: var(--neo-paper) !important;
+  box-shadow: 8px 8px 0 var(--neo-ink) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.navV2Inner {
+  min-height: 58px !important;
+}
+
+.navV2Links {
+  gap: 10px !important;
+}
+
+.navV2Link {
+  min-height: 40px !important;
+  padding: 0.52rem 0.8rem !important;
+  border: 3px solid transparent !important;
+  border-radius: 6px !important;
+  color: var(--neo-ink) !important;
+  font-weight: 950 !important;
+  letter-spacing: 0 !important;
+  text-transform: uppercase !important;
+}
+
+.navV2Link:hover,
+.navV2Link.isActive {
+  border-color: var(--neo-ink) !important;
+  background: var(--neo-green) !important;
+  box-shadow: 4px 4px 0 var(--neo-ink) !important;
+  transform: translate(-2px, -2px) !important;
+}
+
+.navV2Link::after {
+  content: none !important;
+}
+
+.welcomeScreen {
+  background:
+    linear-gradient(90deg, rgba(17, 17, 17, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(17, 17, 17, 0.08) 1px, transparent 1px),
+    var(--neo-blue) !important;
+  background-size: 34px 34px !important;
+}
+
+.welcomeInner,
+.nowPlayingToast,
+.miniAudioPlayer,
+.heroArt,
+.heroDecoScene,
+.aboutMediaWrap,
+.aboutHeaderCard,
+.aboutBodyV3,
+.aboutHeaderRow,
+.aboutQuote,
+.aboutDecoDevice,
+.aboutStatCard,
+.aboutCard,
+.card,
+.statCard,
+.techCard,
+.galleryItem,
+.certCard,
+.formV2,
+.faqItem,
+.contactLeft,
+.contactForm,
+.footerV2Inner {
+  border: 4px solid var(--neo-ink) !important;
+  border-radius: 8px !important;
+  background: var(--neo-paper) !important;
+  box-shadow: var(--shadow) !important;
+  color: var(--neo-ink) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.welcomeInner {
+  padding: clamp(24px, 5vw, 48px) !important;
+}
+
+.heroV2,
+.aboutV2,
+.contactV2,
+.faq,
+.footerV2 {
+  background: transparent !important;
+}
+
+.heroV2Inner,
+.aboutInner,
+.contactInner {
+  position: relative;
+}
+
+.heroV2Inner::before,
+.aboutInner::before,
+.contactInner::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: clamp(92px, 12vw, 160px);
+  height: clamp(92px, 12vw, 160px);
+  border: 4px solid var(--neo-ink);
+  border-radius: 999px;
+  background: var(--neo-pink);
+  box-shadow: 8px 8px 0 var(--neo-ink);
+}
+
+.heroV2Inner::before {
+  right: 3%;
+  top: 8%;
+}
+
+.aboutInner::before {
+  left: -2%;
+  top: 16%;
+  background: var(--neo-cyan);
+}
+
+.contactInner::before {
+  right: 4%;
+  bottom: 4%;
+  background: var(--neo-orange);
+}
+
+.heroDeco,
+.aboutDecoPanel,
+.contactV2::before,
+.contactV2::after,
+.footerV2::before {
+  display: none !important;
+}
+
+.badge,
+.chip,
+.tag,
+.pillLink,
+.eduRibbonChip,
+.labelV2,
+.kickerV2,
+.aboutHeaderBadge,
+.aboutFloatingTag,
+.welcomeIconBtn,
+.welcomeSwatch,
+.scrollTopBtn,
+.iconBtn,
+.aboutDiscordBtn,
+.btn2,
+.welcomeEnter,
+.segBtn,
+.faqQ::after {
+  border: 3px solid var(--neo-ink) !important;
+  border-radius: 6px !important;
+  background: #ffffff !important;
+  box-shadow: 4px 4px 0 var(--neo-ink) !important;
+  color: var(--neo-ink) !important;
+  font-weight: 950 !important;
+  letter-spacing: 0 !important;
+  text-transform: uppercase !important;
+}
+
+.btn2,
+.welcomeEnter,
+.aboutDiscordBtn,
+.pillLinkPrimary,
+.aboutBtnPrimary,
+.segBtn.isActive {
+  background: var(--neo-green) !important;
+}
+
+.btn2Ghost,
+.pillLink,
+.segBtn {
+  background: #ffffff !important;
+}
+
+.btn2:hover,
+.welcomeEnter:hover,
+.aboutDiscordBtn:hover,
+.pillLink:hover,
+.iconBtn:hover,
+.scrollTopBtn:hover,
+.segBtn:hover,
+.welcomeIconBtn:hover,
+.welcomeSwatch:hover {
+  transform: translate(3px, 3px) !important;
+  box-shadow: 1px 1px 0 var(--neo-ink) !important;
+}
+
+.btn2::before,
+.btn2::after,
+.welcomeEnter::before,
+.welcomeEnter::after,
+.aboutDiscordBtn::before,
+.card::before,
+.card::after,
+.cardThumb::before,
+.cardThumb::after,
+.aboutHeaderRow::before,
+.aboutHeaderRow::after,
+.aboutQuote::before,
+.aboutQuote::after {
+  content: none !important;
+}
+
+.card:hover,
+.techCard:hover,
+.galleryItem:hover,
+.statCard:hover,
+.faqItem:hover,
+.aboutQuote:hover {
+  border-color: var(--neo-ink) !important;
+  background: #ffffff !important;
+  box-shadow: 4px 4px 0 var(--neo-ink) !important;
+  transform: translate(4px, 4px) rotate(0deg) !important;
+}
+
+.cardThumb,
+.galleryThumb,
+.techIcon,
+.statIcon,
+.aboutHeaderAvatarInner,
+.aboutAvatarInner,
+.contactOrbitDot,
+.eduDot,
+.badgeSpark {
+  border: 3px solid var(--neo-ink) !important;
+  border-radius: 8px !important;
+  background: var(--neo-blue) !important;
+  box-shadow: 4px 4px 0 var(--neo-ink) !important;
+}
+
+.card:nth-child(3n + 1),
+.techCard:nth-child(3n + 1),
+.galleryItem:nth-child(3n + 1),
+.certCard:nth-child(3n + 1),
+.faqItem:nth-child(3n + 1) {
+  background: #ffffff !important;
+}
+
+.card:nth-child(3n + 2),
+.techCard:nth-child(3n + 2),
+.galleryItem:nth-child(3n + 2),
+.certCard:nth-child(3n + 2),
+.faqItem:nth-child(3n + 2) {
+  background: #c7b6ff !important;
+}
+
+.card:nth-child(3n),
+.techCard:nth-child(3n),
+.galleryItem:nth-child(3n),
+.certCard:nth-child(3n),
+.faqItem:nth-child(3n) {
+  background: #b8fff0 !important;
+}
+
+.cardThumbImg,
+.galleryImg,
+.avatarImg,
+.aboutHeaderAvatarInner .avatar,
+.aboutAvatarInner .avatar {
+  filter: saturate(1.2) contrast(1.08) !important;
+}
+
+.inputV2,
+input,
+textarea,
+select {
+  border: 3px solid var(--neo-ink) !important;
+  border-radius: 6px !important;
+  background: #ffffff !important;
+  box-shadow: 4px 4px 0 var(--neo-ink) !important;
+  color: var(--neo-ink) !important;
+  font-weight: 800 !important;
+}
+
+.inputV2:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 4px solid var(--neo-blue) !important;
+  outline-offset: 3px !important;
+  box-shadow: 2px 2px 0 var(--neo-ink) !important;
+}
+
+.footerV2 {
+  color: var(--neo-ink) !important;
+}
+
+.footerV2Inner {
+  padding: 20px !important;
+  background: var(--neo-orange) !important;
+}
+
+.notFoundNeo {
+  background:
+    linear-gradient(90deg, rgba(17, 17, 17, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(17, 17, 17, 0.08) 1px, transparent 1px),
+    var(--neo-bg) !important;
+  background-size: 34px 34px !important;
+}
+
+.notFoundNeoPanel,
+.notFoundNeoCode span,
+.notFoundNeoBadge,
+.notFoundNeoButton {
+  border-color: var(--neo-ink) !important;
+  border-radius: 8px !important;
+  box-shadow: 8px 8px 0 var(--neo-ink) !important;
+}
+
+@media (max-width: 768px) {
+  .navV2::before {
+    inset: 8px 10px auto 10px !important;
+    box-shadow: 5px 5px 0 var(--neo-ink) !important;
+  }
+
+  .navV2Link {
+    min-height: 36px !important;
+    padding: 0.42rem 0.5rem !important;
+    font-size: 0.76rem !important;
+  }
+
+  .heroV2Inner::before,
+  .aboutInner::before,
+  .contactInner::before {
+    width: 76px;
+    height: 76px;
+    box-shadow: 5px 5px 0 var(--neo-ink);
+  }
+
+  .welcomeInner,
+  .nowPlayingToast,
+  .miniAudioPlayer,
+  .heroArt,
+  .aboutHeaderRow,
+  .aboutQuote,
+  .card,
+  .statCard,
+  .techCard,
+  .galleryItem,
+  .certCard,
+  .formV2,
+  .faqItem,
+  .footerV2Inner {
+    border-width: 3px !important;
+    box-shadow: 5px 5px 0 var(--neo-ink) !important;
+  }
+}
