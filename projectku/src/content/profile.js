@@ -56,6 +56,14 @@ export const profile = {
   ],
   projects: [
     {
+      title: "SinyalKita",
+      description:
+        "A web project for presenting SinyalKita with a direct, accessible, and responsive experience.",
+      tags: ["Web", "Responsive", "Vercel"],
+      showcase: ["Public website", "Responsive layout", "Direct access"],
+      links: [{ label: "Open Web", href: "https://sinyalkita.site" }],
+    },
+    {
       title: "ClarityX",
       description:
         "A clean web project focused on clarity, presentation, and fast access to the main experience.",
