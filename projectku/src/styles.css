@@ -345,6 +345,13 @@ html {
   display: grid;
   justify-items: center;
   gap: clamp(14px, 2.2vh, 22px);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   animation: welcomeIn var(--welcome-inner-dur) var(--ease) both;
   transition: transform 420ms var(--ease), opacity 320ms var(--ease), filter 360ms var(--ease);
 }
@@ -5071,4 +5078,14 @@ body::before {
 
 .footerV2 {
   border-top: 1px solid rgba(255, 246, 226, 0.08);
+}
+
+.welcomeInner {
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
