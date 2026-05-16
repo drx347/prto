@@ -302,10 +302,18 @@ export default function HomeDesktop({ rootClassName = "homeRoot homeRoot--deskto
               </Reveal>
             ) : null}
 
+            <Reveal delayMs={30}>
+              <div className="heroEyebrow" aria-label="Portfolio context">
+                <span>Jawa Timur, Indonesia</span>
+                <span>UT Student</span>
+                <span>Build log 2026</span>
+              </div>
+            </Reveal>
+
             <Reveal delayMs={60}>
               <h1 className="heroTitle">
-                <span className="heroTitleTop edgyText">Tech</span>
-                <span className="heroTitleBottom accentText">Enthusiast</span>
+                <span className="heroTitleTop edgyText">Audrey</span>
+                <span className="heroTitleBottom accentText">builds web things</span>
               </h1>
             </Reveal>
 
@@ -315,6 +323,16 @@ export default function HomeDesktop({ rootClassName = "homeRoot homeRoot--deskto
 
             <Reveal delayMs={120}>
               <p className="heroSubtitle">{profile.tagline}</p>
+            </Reveal>
+
+            <Reveal delayMs={135}>
+              <div className="humanNote" aria-label="Short personal note">
+                <span className="humanNoteLabel">currently</span>
+                <span>
+                  Turning small experiments into clean interfaces, Discord tools, and Lua scripts
+                  that are actually pleasant to use.
+                </span>
+              </div>
             </Reveal>
 
             <Reveal delayMs={150}>
@@ -375,6 +393,7 @@ export default function HomeDesktop({ rootClassName = "homeRoot homeRoot--deskto
           <Reveal>
             <div className="aboutHeaderCard" aria-label="About header">
               <div className="aboutHeaderCover" aria-hidden="true" />
+              <div className="aboutNotebookTape" aria-hidden="true">profile note</div>
               <div className="aboutSectionHead aboutSectionHeadCentered" aria-hidden="true" />
               <div className="aboutHeaderRow">
                 <div className="aboutHeaderMain" aria-label="Profil">
@@ -485,6 +504,14 @@ export default function HomeDesktop({ rootClassName = "homeRoot homeRoot--deskto
           <div className="aboutBodyV3">
             <Reveal delayMs={60}>
               <p className="aboutLead muted">{aboutText}</p>
+            </Reveal>
+
+            <Reveal delayMs={85}>
+              <div className="fieldNotes" aria-label="Working notes">
+                <span>UI that feels calm</span>
+                <span>Performance before sparkle</span>
+                <span>Learning in public, one build at a time</span>
+              </div>
             </Reveal>
 
             {profile.quote ? (
@@ -651,13 +678,14 @@ export default function HomeDesktop({ rootClassName = "homeRoot homeRoot--deskto
         <div className="container contactInner">
           <Reveal>
             <div className="contactLeft">
+              <p className="contactHandNote">available for ideas, experiments, and useful little tools</p>
               <div className="contactOrbitRow" aria-hidden="true">
                 <span className="contactOrbitDot" />
                 <span className="contactOrbitDot" />
                 <span className="contactOrbitDot" />
               </div>
               <p className="kickerV2">Contact</p>
-              <h2 className="h2V2">Let’s Build Something Great</h2>
+              <h2 className="h2V2">Tell me what you want to build.</h2>
               <p className="muted">
                 Kirim pesan lewat form di bawah dengan klik <b>Send Message</b>, atau
                 langsung lewat Discord <b>{profile.discordHandle}</b>.
