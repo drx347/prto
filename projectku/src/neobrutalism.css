@@ -1,13 +1,13 @@
 :root {
   color-scheme: light !important;
-  --bg: #f7f04c !important;
-  --bg2: #fff8ef !important;
+  --bg: #dfd34a !important;
+  --bg2: #f4e5d0 !important;
   --text: #111111 !important;
-  --muted: #3a332d !important;
+  --muted: #2d2925 !important;
   --border: #111111 !important;
   --border2: #111111 !important;
-  --panel: #fff8ef !important;
-  --panel2: #ffffff !important;
+  --panel: #f4e5d0 !important;
+  --panel2: #fff7e8 !important;
   --accent: #111111 !important;
   --accent2: #ff5c8a !important;
   --accent3: #111111 !important;
@@ -23,14 +23,18 @@
   --shadow2: 12px 12px 0 #111111 !important;
   --ring: 0 0 0 4px #5aa7ff !important;
   --neon-glow: none !important;
-  --neo-bg: #f7f04c;
-  --neo-paper: #fff8ef;
+  --neo-bg: #dfd34a;
+  --neo-paper: #f4e5d0;
+  --neo-paper-strong: #fff7e8;
   --neo-ink: #111111;
-  --neo-blue: #5aa7ff;
-  --neo-pink: #ff5c8a;
-  --neo-green: #9dff57;
-  --neo-cyan: #30d5c8;
-  --neo-orange: #ff8c42;
+  --neo-muted: #2d2925;
+  --neo-blue: #4f91d9;
+  --neo-pink: #e8577f;
+  --neo-green: #86d64b;
+  --neo-cyan: #28b8ad;
+  --neo-orange: #e68138;
+  --neo-lavender: #bca9ee;
+  --neo-mint: #a8e8d9;
 }
 
 html,
@@ -39,7 +43,7 @@ body {
   background:
     linear-gradient(90deg, rgba(17, 17, 17, 0.08) 1px, transparent 1px),
     linear-gradient(rgba(17, 17, 17, 0.08) 1px, transparent 1px),
-    var(--neo-bg) !important;
+    linear-gradient(135deg, var(--neo-bg) 0%, #e6c85e 54%, #d2c64a 100%) !important;
   background-size: 34px 34px !important;
 }
 
@@ -59,14 +63,14 @@ body::after,
   inset: 0 !important;
   opacity: 1 !important;
   background-image:
-    linear-gradient(90deg, rgba(17, 17, 17, 0.08) 1px, transparent 1px),
-    linear-gradient(rgba(17, 17, 17, 0.08) 1px, transparent 1px) !important;
+    linear-gradient(90deg, rgba(17, 17, 17, 0.065) 1px, transparent 1px),
+    linear-gradient(rgba(17, 17, 17, 0.065) 1px, transparent 1px) !important;
   background-size: 34px 34px !important;
   mask-image: none !important;
 }
 
 .siteOverlayLayer--dots {
-  opacity: 0.2 !important;
+  opacity: 0.12 !important;
   background-image:
     radial-gradient(circle, #111111 1px, transparent 2px) !important;
   background-size: 28px 28px !important;
@@ -117,15 +121,101 @@ h3,
 .nowPlayingToastDetail,
 .aboutHeaderMeta,
 .aboutTopTagline {
-  color: #3a332d !important;
+  color: var(--neo-muted) !important;
+}
+
+.card p,
+.techCard p,
+.galleryItem p,
+.certCard p,
+.faqItem p,
+.aboutQuoteText,
+.aboutHeaderLocation,
+.aboutBodyV3,
+.contactLeft p,
+.formV2 label,
+.faqA {
+  color: var(--neo-muted) !important;
+}
+
+.card h3,
+.techCard h3,
+.galleryItem h3,
+.certCard h3,
+.faqQ,
+.aboutQuoteMark,
+.aboutHeaderLocation b,
+.contactLeft b,
+.faqA b {
+  color: var(--neo-ink) !important;
 }
 
 .accentText,
 .welcomeAccent {
   color: var(--neo-pink) !important;
-  background: none !important;
+  background: var(--neo-paper-strong) !important;
   -webkit-text-fill-color: currentColor !important;
-  text-shadow: 3px 3px 0 var(--neo-ink) !important;
+  text-shadow: none !important;
+  padding: 0 0.08em;
+  border: 3px solid var(--neo-ink);
+  border-radius: 6px;
+  box-shadow: 4px 4px 0 var(--neo-ink);
+}
+
+.aboutHeaderName {
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+  padding: 0.06em 0.14em 0.1em;
+  border: 4px solid var(--neo-ink);
+  border-radius: 8px;
+  background:
+    linear-gradient(105deg, transparent 0 36%, rgba(255, 255, 255, 0.92) 44%, transparent 54%),
+    linear-gradient(90deg, #111111 0%, #111111 42%, #4a2f10 58%, #111111 100%) !important;
+  background-size: 230% 100%, 100% 100% !important;
+  background-position: -140% 0, 0 0 !important;
+  -webkit-background-clip: text, text !important;
+  background-clip: text, text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: none !important;
+  box-shadow: 5px 5px 0 var(--neo-pink);
+  animation: neoNameShine 3.8s ease-in-out infinite;
+}
+
+.aboutHeaderMetaShine {
+  color: var(--neo-ink) !important;
+  text-shadow: none !important;
+}
+
+.aboutHeaderMetaChar {
+  color: var(--neo-ink) !important;
+  -webkit-text-fill-color: currentColor !important;
+  text-shadow: none !important;
+}
+
+.aboutHeaderMetaChar:nth-child(3n + 1) {
+  color: #5f3fb4 !important;
+}
+
+.aboutHeaderMetaChar:nth-child(3n + 2) {
+  color: #a84562 !important;
+}
+
+.aboutHeaderMetaChar:nth-child(3n) {
+  color: #176b64 !important;
+}
+
+@keyframes neoNameShine {
+  0%,
+  46% {
+    background-position: -150% 0, 0 0;
+  }
+
+  68%,
+  100% {
+    background-position: 160% 0, 0 0;
+  }
 }
 
 .navV2 {
@@ -178,7 +268,7 @@ h3,
   background:
     linear-gradient(90deg, rgba(17, 17, 17, 0.08) 1px, transparent 1px),
     linear-gradient(rgba(17, 17, 17, 0.08) 1px, transparent 1px),
-    var(--neo-blue) !important;
+    #d27462 !important;
   background-size: 34px 34px !important;
 }
 
@@ -207,11 +297,20 @@ h3,
 .footerV2Inner {
   border: 4px solid var(--neo-ink) !important;
   border-radius: 8px !important;
-  background: var(--neo-paper) !important;
+  background: var(--neo-paper-strong) !important;
   box-shadow: var(--shadow) !important;
   color: var(--neo-ink) !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
+}
+
+.aboutHeaderCard,
+.aboutBodyV3,
+.contactLeft,
+.formV2,
+.nowPlayingToast,
+.miniAudioPlayer {
+  background: var(--neo-paper-strong) !important;
 }
 
 .welcomeInner {
@@ -242,7 +341,7 @@ h3,
   height: clamp(92px, 12vw, 160px);
   border: 4px solid var(--neo-ink);
   border-radius: 999px;
-  background: var(--neo-pink);
+  background: #d85f7d;
   box-shadow: 8px 8px 0 var(--neo-ink);
 }
 
@@ -254,13 +353,13 @@ h3,
 .aboutInner::before {
   left: -2%;
   top: 16%;
-  background: var(--neo-cyan);
+  background: #29aca2;
 }
 
 .contactInner::before {
   right: 4%;
   bottom: 4%;
-  background: var(--neo-orange);
+  background: #d97934;
 }
 
 .heroDeco,
@@ -299,13 +398,23 @@ h3,
   text-transform: uppercase !important;
 }
 
+.badge,
+.chip,
+.tag,
+.aboutHeaderBadge,
+.eduRibbonChip,
+.labelV2,
+.kickerV2 {
+  background: #fff7e8 !important;
+}
+
 .btn2,
 .welcomeEnter,
 .aboutDiscordBtn,
 .pillLinkPrimary,
 .aboutBtnPrimary,
 .segBtn.isActive {
-  background: var(--neo-green) !important;
+  background: #78c542 !important;
 }
 
 .btn2Ghost,
@@ -366,7 +475,7 @@ h3,
 .badgeSpark {
   border: 3px solid var(--neo-ink) !important;
   border-radius: 8px !important;
-  background: var(--neo-blue) !important;
+  background: #77aee7 !important;
   box-shadow: 4px 4px 0 var(--neo-ink) !important;
 }
 
@@ -383,7 +492,7 @@ h3,
 .galleryItem:nth-child(3n + 2),
 .certCard:nth-child(3n + 2),
 .faqItem:nth-child(3n + 2) {
-  background: #c7b6ff !important;
+  background: var(--neo-lavender) !important;
 }
 
 .card:nth-child(3n),
@@ -391,7 +500,7 @@ h3,
 .galleryItem:nth-child(3n),
 .certCard:nth-child(3n),
 .faqItem:nth-child(3n) {
-  background: #b8fff0 !important;
+  background: var(--neo-mint) !important;
 }
 
 .cardThumbImg,
@@ -429,7 +538,7 @@ select:focus {
 
 .footerV2Inner {
   padding: 20px !important;
-  background: var(--neo-orange) !important;
+  background: #d97934 !important;
 }
 
 .notFoundNeo {
