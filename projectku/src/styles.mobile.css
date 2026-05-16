@@ -784,6 +784,50 @@
     gap: 1rem;
   }
 
+  .heroV2 {
+    padding-top: 86px;
+  }
+
+  .heroSubtitle,
+  .aboutLead,
+  .contactLeft .muted,
+  .faqHeader .muted {
+    max-width: 100%;
+  }
+
+  .chipRow,
+  .tagRow,
+  .aboutHeaderBadges {
+    gap: 7px;
+  }
+
+  .chip,
+  .tag,
+  .aboutHeaderBadge,
+  .eduRibbonChip {
+    border-radius: 999px;
+  }
+
+  .card,
+  .techCard,
+  .galleryItem,
+  .certCard,
+  .faqItem,
+  .formV2,
+  .aboutHeaderRow,
+  .aboutQuote,
+  .contactLeft {
+    box-shadow:
+      0 14px 32px rgba(0, 0, 0, 0.26),
+      inset 0 1px 0 rgba(255, 246, 226, 0.06);
+  }
+
+  .btn2,
+  .pillLink,
+  .aboutDiscordBtn {
+    min-height: 44px;
+  }
+
   .cardGrid {
     grid-template-columns: 1fr;
   }
