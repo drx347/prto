@@ -405,13 +405,12 @@ export default function Showcase({
         <div className="showcaseCenter">
           <Reveal>
             <h2 className="showcaseTitle">
-              Selected <span className="accentText">workbench</span>
+              Portfolio <span className="accentText">Showcase</span>
             </h2>
           </Reveal>
           <Reveal delayMs={80}>
             <p className="showcaseDesc">
-              A small archive of projects, UI experiments, and tools I made while learning
-              by shipping. Some are polished, some are practical, all of them taught me something.
+              Explore my journey through projects and technical expertise. Each section represents a milestone in my continuous learning path.
             </p>
           </Reveal>
         </div>

@@ -67,10 +67,6 @@ export default function ProjectCard({ project }) {
       onPointerMove={onPointerMove}
       onPointerLeave={onPointerLeave}
     >
-      <div className="cardMetaRow" aria-label="Project note">
-        <span>case note</span>
-        <span>{project.tags?.[0] ?? "web"}</span>
-      </div>
       {project.thumbnail ? (
         <div className="cardThumb" aria-label={`${project.title} thumbnail`}>
           <img

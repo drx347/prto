@@ -788,84 +788,11 @@
     padding-top: 86px;
   }
 
-  .heroV2Inner--center {
-    text-align: left;
-  }
-
-  .heroLeftV2 {
-    padding: 18px;
-    border-radius: 22px;
-    background-size: 100% 30px, 54px 100%, 100% 100%;
-  }
-
-  .heroLeftV2::before {
-    left: 14px;
-  }
-
-  .heroLeftV2::after {
-    right: 16px;
-    top: -10px;
-    font-size: 0.62rem;
-  }
-
-  .heroEyebrow {
-    gap: 6px;
-    margin-bottom: 14px;
-    font-size: 0.72rem;
-  }
-
-  .heroEyebrow span {
-    min-height: 28px;
-    padding: 0.24rem 0.48rem;
-  }
-
-  .heroTitleBottom {
-    font-size: clamp(2rem, 13vw, 3.8rem);
-  }
-
-  .humanNote {
-    grid-template-columns: 1fr;
-    gap: 6px;
-    padding: 0.76rem 0.82rem;
-    font-size: 0.9rem;
-  }
-
   .heroSubtitle,
   .aboutLead,
   .contactLeft .muted,
   .faqHeader .muted {
     max-width: 100%;
-  }
-
-  .fieldNotes {
-    grid-template-columns: 1fr;
-  }
-
-  .fieldNotes span,
-  .fieldNotes span:nth-child(2),
-  .fieldNotes span:nth-child(3) {
-    min-height: auto;
-    transform: none;
-  }
-
-  .aboutNotebookTape {
-    left: 18px;
-    top: -13px;
-    font-size: 0.66rem;
-  }
-
-  .showcaseCenter {
-    text-align: left;
-    align-items: flex-start;
-  }
-
-  .segmented {
-    width: 100%;
-  }
-
-  .cardMetaRow {
-    padding: 12px 14px 0;
-    font-size: 0.66rem;
   }
 
   .chipRow,
