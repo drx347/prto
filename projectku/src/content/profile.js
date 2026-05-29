@@ -43,9 +43,9 @@ export const profile = {
     "Vercel",
   ],
   about: [
-    "Saya adalah Mahasiswa Universitas Terbuka (UT) dan juga developer yang fokus pada UI modern, performa, dan pengalaman pengguna.",
-    "Saya suka mengubah ide kompleks menjadi antarmuka yang halus dan enak dipakai.",
-    "Saat ini saya mendalami animasi, WebGL, dan pengalaman web interaktif.",
+    "I'm a student at Universitas Terbuka (UT) and a developer focused on modern UI, performance, and user experience.",
+    "I love transforming complex ideas into smooth, user-friendly interfaces.",
+    "I'm currently exploring animation, WebGL, and interactive web experiences.",
   ],
   quote: "\"Code is like humor. When you have to explain it, it's bad. - Alan Kay.\"",
   socials: [
