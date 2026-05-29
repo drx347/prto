@@ -1086,4 +1086,18 @@
     font-size: 0.92rem;
     line-height: 1.65;
   }
+
+  .aboutHeaderActions .aboutDiscordBtn {
+    width: 46px !important;
+    height: 46px !important;
+    min-width: 46px !important;
+    min-height: 46px !important;
+    padding: 0 !important;
+  }
+
+  .aboutHeaderActions .aboutDiscordIcon,
+  .aboutHeaderActions .aboutDiscordIcon svg {
+    width: 21px !important;
+    height: 21px !important;
+  }
 }

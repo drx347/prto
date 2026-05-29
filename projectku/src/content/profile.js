@@ -47,7 +47,7 @@ export const profile = {
     "Saya suka mengubah ide kompleks menjadi antarmuka yang halus dan enak dipakai.",
     "Saat ini saya mendalami animasi, WebGL, dan pengalaman web interaktif.",
   ],
-  quote: "Code is like humor. When you have to explain it, it's bad. - Alan Kay",
+  quote: "\"Code is like humor. When you have to explain it, it's bad. - Alan Kay.\"",
   socials: [
     { label: "GitHub", href: "https://github.com/voixera" },
     { label: "LinkedIn", href: "https://linkedin.com/in/drax23zx" },
