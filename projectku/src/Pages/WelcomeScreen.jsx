@@ -472,7 +472,7 @@ function WelcomeThemeScene() {
 
 export default function WelcomeScreen({ entered = false, onEnter }) {
   const defaultPalette = useMemo(
-    () => PALETTES.find((palette) => palette.id === "gold") ?? PALETTES[0],
+    () => PALETTES.find((palette) => palette.id === "steel") ?? PALETTES[0],
     []
   );
 

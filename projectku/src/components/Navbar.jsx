@@ -3,8 +3,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 const navItems = [
   { href: "#home", label: "Home", id: "home" },
   { href: "#about", label: "About", id: "about" },
+  { href: "#education", label: "Education", id: "education" },
   { href: "#portfolio", label: "Portfolio", id: "portfolio" },
-  { href: "#contact", label: "Contact", id: "contact" },
+  { href: "#faq", label: "FAQ", id: "faq" },
 ];
 
 function getHashId() {

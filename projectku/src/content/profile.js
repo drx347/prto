@@ -49,10 +49,10 @@ export const profile = {
   ],
   quote: "Code is like humor. When you have to explain it, it's bad. - Alan Kay",
   socials: [
-    { label: "GitHub", href: "https://github.com/drxdvs" },
+    { label: "GitHub", href: "https://github.com/voixera" },
     { label: "LinkedIn", href: "https://linkedin.com/in/drax23zx" },
     { label: "Email", href: "mailto:rizafaisal173@gmail.com" },
-    { label: "Twitter", href: "https://twitter.com/imantonygasing" },
+    { label: "Twitter", href: "https://twitter.com/voixeraxd" },
   ],
   projects: [
     {

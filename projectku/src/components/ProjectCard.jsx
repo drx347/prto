@@ -1,8 +1,17 @@
 import { useCallback, useRef } from "react";
 
-export default function ProjectCard({ project }) {
+function getLinkHost(href) {
+  try {
+    return new URL(href).hostname.replace(/^www\./, "");
+  } catch {
+    return href;
+  }
+}
+
+export default function ProjectCard({ project, index = 0 }) {
   const rafIdRef = useRef(0);
   const pointerRef = useRef({ x: 0, y: 0 });
+  const primaryLink = project.links?.[0];
 
   const applyTilt = useCallback((el) => {
     const rect = el.getBoundingClientRect();
@@ -77,8 +86,28 @@ export default function ProjectCard({ project }) {
             decoding="async"
           />
         </div>
-      ) : null}
+      ) : (
+        <div className="cardTerminalPreview" aria-label={`${project.title} preview`}>
+          <div className="cardTerminalTop" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </div>
+          <div className="cardTerminalBody">
+            <p>
+              <span className="terminalPrompt">~/portfolio</span> open {project.title}
+            </p>
+            {primaryLink ? (
+              <p className="terminalUrl">{getLinkHost(primaryLink.href)}</p>
+            ) : null}
+          </div>
+        </div>
+      )}
       <div className="cardBody">
+        <div className="cardMeta">
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <span>{project.tags[0]}</span>
+        </div>
         <h3 className="h3">{project.title}</h3>
         <p className="muted">{project.description}</p>
         {project.showcase?.length ? (
@@ -111,7 +140,9 @@ export default function ProjectCard({ project }) {
               rel="noreferrer"
               aria-label={`${link.label} (buka tab baru)`}
             >
-              {link.label} <span aria-hidden="true">↗</span>
+              <span className="pillLinkText">{link.label}</span>
+              <span className="pillLinkHost">{getLinkHost(link.href)}</span>
+              <span aria-hidden="true">↗</span>
             </a>
           ))}
         </div>

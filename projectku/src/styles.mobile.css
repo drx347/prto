@@ -862,3 +862,135 @@
   }
 
 }
+
+/* Final mobile pass for the developer redesign */
+@media (max-width: 768px) {
+  #home,
+  #about,
+  #education,
+  #portfolio,
+  #faq {
+    scroll-margin-top: 78px;
+  }
+
+  #contact,
+  .contactV2 {
+    display: none !important;
+  }
+
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .navSpacer {
+    height: 60px;
+  }
+
+  .navV2Inner {
+    min-height: 60px;
+    padding: 0.62rem 0;
+  }
+
+  .navV2Links {
+    gap: 4px;
+    padding: 4px;
+    padding-right: 4px;
+    font-size: 0.78rem;
+  }
+
+  .heroV2 {
+    min-height: auto;
+    padding: 78px 0 66px;
+  }
+
+  .heroDeco {
+    display: none;
+  }
+
+  .heroV2Inner--developer {
+    gap: 28px;
+  }
+
+  .heroEyebrow {
+    font-size: 0.72rem;
+  }
+
+  .heroTitle {
+    font-size: 3.1rem;
+    line-height: 0.94;
+  }
+
+  .heroSubtitle {
+    font-size: 0.96rem;
+    line-height: 1.7;
+  }
+
+  .homeRoot--mobile .heroButtons {
+    flex-direction: column;
+  }
+
+  .homeRoot--mobile .btn2 {
+    width: 100%;
+  }
+
+  .heroWorkbenchBody {
+    font-size: 0.72rem;
+  }
+
+  .aboutHeaderRow,
+  .card,
+  .techCard,
+  .galleryItem,
+  .faqItem,
+  .statCard,
+  .aboutQuote {
+    border-radius: 8px !important;
+  }
+
+  .aboutLead {
+    padding-left: 14px;
+  }
+
+  .showcaseCenter,
+  .eduHeader,
+  .faqHeader {
+    text-align: left;
+  }
+
+  .statsRow {
+    grid-template-columns: 1fr;
+  }
+
+  .cardGrid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .cardGrid > .reveal,
+  .cardGrid > .reveal:nth-child(1),
+  .cardGrid > .reveal:nth-child(2) {
+    grid-column: span 12;
+  }
+
+  .techGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .segmented {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 420px) {
+  .heroTitle {
+    font-size: 2.65rem;
+  }
+
+  .heroWorkbenchBody {
+    font-size: 0.66rem;
+  }
+
+  .codeIndent {
+    min-width: 74px;
+  }
+}

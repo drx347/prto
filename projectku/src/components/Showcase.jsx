@@ -465,7 +465,7 @@ export default function Showcase({
             <div className="cardGrid">
               {projects.map((p, idx) => (
                 <Reveal key={p.title} delayMs={idx * 70}>
-                  <ProjectCard project={p} />
+                  <ProjectCard project={p} index={idx} />
                 </Reveal>
               ))}
             </div>

@@ -49,3 +49,30 @@
 .platformIOS .homeRoot--tablet .textareaV2 {
   font-size: 16px;
 }
+
+/* Final tablet-only alignment for the redesigned portfolio */
+.uiTablet #home,
+.uiTablet #about,
+.uiTablet #education,
+.uiTablet #portfolio,
+.uiTablet #faq {
+  scroll-margin-top: calc(84px + var(--safe-top));
+}
+
+.uiTablet #contact,
+.uiTablet .contactV2 {
+  display: none !important;
+}
+
+.uiTablet .heroV2 {
+  min-height: auto;
+}
+
+.uiTablet .heroV2Inner--developer {
+  grid-template-columns: 1fr;
+}
+
+.uiTablet .heroLeftV2,
+.uiTablet .heroWorkbench {
+  max-width: 760px;
+}

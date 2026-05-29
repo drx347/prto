@@ -4,7 +4,6 @@ import Showcase from "../../components/Showcase";
 import AvatarPlaceholder from "../../components/AvatarPlaceholder";
 import AnimatedProfileMeta from "../../components/AnimatedProfileMeta";
 import EducationTimeline from "../../components/EducationTimeline";
-import ContactForm from "../../components/ContactForm";
 import { GithubIcon, LinkedinIcon, MailIcon as MailIcon2 } from "../../components/Icons";
 import { profile } from "../../content/profile";
 
@@ -19,28 +18,6 @@ function ArrowUpRightIcon() {
         fill="none"
         stroke="currentColor"
         strokeWidth="2.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function MailIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        d="M4 6h16v12H4z"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.4"
-        strokeLinejoin="round"
-      />
-      <path
-        d="m4 7 8 6 8-6"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.4"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -130,6 +107,10 @@ function RotatingTypeLine({ phrases = ROLE_PHRASES }) {
 export default function HomeMobile() {
   const aboutText = useMemo(() => profile.about.join(" "), []);
   const aboutBadges = useMemo(() => profile.aboutBadges?.slice(0, 3) ?? [], []);
+  const githubLink = useMemo(
+    () => profile.socials.find((item) => item.label.toLowerCase().includes("github")),
+    []
+  );
 
   return (
     <main className="homeRoot homeRoot--mobile">
@@ -147,8 +128,12 @@ export default function HomeMobile() {
             <span className="heroDecoTrail trailB" />
           </div>
         </div>
-        <div className="container heroV2Inner heroV2Inner--center">
+        <div className="container heroV2Inner heroV2Inner--developer">
           <div className="heroLeftV2">
+            <Reveal>
+              <p className="heroEyebrow">{profile.name}</p>
+            </Reveal>
+
             {false ? (
               <Reveal>
                 <div className="badge">
@@ -193,12 +178,19 @@ export default function HomeMobile() {
                     <ArrowUpRightIcon />
                   </span>
                 </a>
-                <a className="btn2 btn2Ghost" href="#contact">
-                  Contact{" "}
-                  <span className="btnIcon" aria-hidden="true">
-                    <MailIcon />
-                  </span>
-                </a>
+                {githubLink ? (
+                  <a
+                    className="btn2 btn2Ghost"
+                    href={githubLink.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub{" "}
+                    <span className="btnIcon" aria-hidden="true">
+                      <GithubIcon title="GitHub" />
+                    </span>
+                  </a>
+                ) : null}
               </div>
             </Reveal>
 
@@ -223,6 +215,38 @@ export default function HomeMobile() {
               </div>
             </Reveal>
           </div>
+
+          <Reveal delayMs={180} className="heroWorkbenchReveal">
+            <aside className="heroWorkbench" aria-label="Developer summary">
+              <div className="heroWorkbenchTop">
+                <span className="heroWorkbenchDot" />
+                <span className="heroWorkbenchDot" />
+                <span className="heroWorkbenchDot" />
+                <span className="heroWorkbenchTitle">portfolio.local</span>
+              </div>
+              <div className="heroWorkbenchBody">
+                <p>
+                  <span className="codeMuted">const</span> developer = {"{"}
+                </p>
+                <p>
+                  <span className="codeIndent">name:</span> "{profile.name}",
+                </p>
+                <p>
+                  <span className="codeIndent">role:</span> "{profile.role}",
+                </p>
+                <p>
+                  <span className="codeIndent">location:</span> "{profile.location}",
+                </p>
+                <p>
+                  <span className="codeIndent">experience:</span> "{profile.yearsExperience} years",
+                </p>
+                <p>
+                  <span className="codeIndent">stack:</span> [{profile.heroChips.map((chip) => `"${chip}"`).join(", ")}],
+                </p>
+                <p>{"};"}</p>
+              </div>
+            </aside>
+          </Reveal>
         </div>
       </section>
 
@@ -416,30 +440,6 @@ export default function HomeMobile() {
         skills={profile.skills}
         yearsExperience={profile.yearsExperience}
       />
-
-      <section id="contact" className="contactV2">
-        <div className="container contactInner">
-          <Reveal>
-            <div className="contactLeft">
-              <div className="contactOrbitRow" aria-hidden="true">
-                <span className="contactOrbitDot" />
-                <span className="contactOrbitDot" />
-                <span className="contactOrbitDot" />
-              </div>
-              <p className="kickerV2">Contact</p>
-              <h2 className="h2V2">Let’s Build Something Great</h2>
-              <p className="muted">
-                Kirim pesan lewat form di bawah dengan klik <b>Send Message</b>, atau
-                langsung lewat Discord <b>{profile.discordHandle}</b>.
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delayMs={90}>
-            <ContactForm discordHandle={profile.discordHandle} />
-          </Reveal>
-        </div>
-      </section>
 
       <section id="faq" className="faq">
         <div className="container">
