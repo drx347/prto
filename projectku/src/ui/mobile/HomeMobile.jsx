@@ -320,27 +320,27 @@ export default function HomeMobile() {
                           </a>
                         );
                       })}
-                    </div>
 
-                    {profile.discordInvite ? (
-                      <a
-                        className="aboutDiscordBtn"
-                        href={profile.discordInvite}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label="Discord"
-                        title="Discord"
-                      >
-                        <span className="aboutDiscordIcon" aria-hidden="true">
-                          <svg viewBox="0 0 24 24">
-                            <path
-                              d="M19.54 5.34A16.5 16.5 0 0 0 15.58 4l-.2.39c1.42.42 2.08.98 2.08.98a13.3 13.3 0 0 0-8.92 0s.67-.56 2.08-.98L10.42 4c-1.45.24-2.78.7-3.96 1.34C3.96 9.08 3.28 12.74 3.6 16.34A16.2 16.2 0 0 0 8.46 18.8l.98-1.34c-.54-.2-1.05-.45-1.54-.76l.36-.28c2.98 1.4 6.48 1.4 9.48 0l.36.28c-.49.31-1 .56-1.54.76l.98 1.34a16.2 16.2 0 0 0 4.86-2.46c.38-4.18-.64-7.8-2.86-11ZM9.72 14.28c-.94 0-1.7-.86-1.7-1.92s.74-1.92 1.7-1.92c.95 0 1.72.86 1.7 1.92 0 1.06-.75 1.92-1.7 1.92Zm4.56 0c-.94 0-1.7-.86-1.7-1.92s.75-1.92 1.7-1.92c.95 0 1.72.86 1.7 1.92 0 1.06-.75 1.92-1.7 1.92Z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </span>
-                      </a>
-                    ) : null}
+                      {profile.discordInvite ? (
+                        <a
+                          className="iconBtn aboutDiscordBtn"
+                          href={profile.discordInvite}
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label="Discord"
+                          title="Discord"
+                        >
+                          <span className="aboutDiscordIcon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                              <path
+                                d="M19.54 5.34A16.5 16.5 0 0 0 15.58 4l-.2.39c1.42.42 2.08.98 2.08.98a13.3 13.3 0 0 0-8.92 0s.67-.56 2.08-.98L10.42 4c-1.45.24-2.78.7-3.96 1.34C3.96 9.08 3.28 12.74 3.6 16.34A16.2 16.2 0 0 0 8.46 18.8l.98-1.34c-.54-.2-1.05-.45-1.54-.76l.36-.28c2.98 1.4 6.48 1.4 9.48 0l.36.28c-.49.31-1 .56-1.54.76l.98 1.34a16.2 16.2 0 0 0 4.86-2.46c.38-4.18-.64-7.8-2.86-11ZM9.72 14.28c-.94 0-1.7-.86-1.7-1.92s.74-1.92 1.7-1.92c.95 0 1.72.86 1.7 1.92 0 1.06-.75 1.92-1.7 1.92Zm4.56 0c-.94 0-1.7-.86-1.7-1.92s.75-1.92 1.7-1.92c.95 0 1.72.86 1.7 1.92 0 1.06-.75 1.92-1.7 1.92Z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                        </a>
+                      ) : null}
+                    </div>
                   </div>
                 </div>
               </div>

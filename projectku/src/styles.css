@@ -7335,6 +7335,177 @@ body::after,
   height: 26px !important;
 }
 
+/* Last override: profile header stays frameless and all four social buttons match */
+.aboutHeaderCard,
+.aboutHeaderRow {
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  overflow: visible !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.aboutHeaderCard::before,
+.aboutHeaderCard::after,
+.aboutHeaderRow::before,
+.aboutHeaderRow::after,
+.aboutHeaderCover {
+  content: none !important;
+  display: none !important;
+}
+
+.aboutHeaderActions,
+.aboutHeaderIcons {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+}
+
+.aboutHeaderActions .iconBtn,
+.aboutHeaderIcons .iconBtn,
+.aboutHeaderIcons .aboutDiscordBtn {
+  width: 56px !important;
+  height: 56px !important;
+  min-width: 56px !important;
+  min-height: 56px !important;
+  padding: 0 !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  border-radius: var(--radius) !important;
+}
+
+.aboutHeaderIcons .aboutDiscordBtn {
+  gap: 0 !important;
+  font-size: 0 !important;
+  line-height: 1 !important;
+}
+
+.aboutHeaderIcons .aboutDiscordIcon,
+.aboutHeaderIcons .aboutDiscordIcon svg {
+  display: block !important;
+  width: 26px !important;
+  height: 26px !important;
+}
+
+/* Final profile header cleanup: no card, Discord is just the fourth icon */
+.aboutHeaderCard,
+.aboutHeaderRow {
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  overflow: visible !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.aboutHeaderCard::before,
+.aboutHeaderCard::after,
+.aboutHeaderRow::before,
+.aboutHeaderRow::after,
+.aboutHeaderCover {
+  content: none !important;
+  display: none !important;
+}
+
+.aboutHeaderActions,
+.aboutHeaderIcons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.aboutHeaderActions .iconBtn,
+.aboutHeaderIcons .iconBtn,
+.aboutHeaderIcons .aboutDiscordBtn {
+  width: 56px !important;
+  height: 56px !important;
+  min-width: 56px !important;
+  min-height: 56px !important;
+  padding: 0 !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  border-radius: var(--radius) !important;
+}
+
+.aboutHeaderIcons .aboutDiscordBtn {
+  gap: 0 !important;
+  font-size: 0 !important;
+  line-height: 1 !important;
+}
+
+.aboutHeaderIcons .aboutDiscordIcon,
+.aboutHeaderIcons .aboutDiscordIcon svg {
+  display: block;
+  width: 26px !important;
+  height: 26px !important;
+}
+
+/* Last override: profile header stays frameless and all four social buttons match */
+.aboutHeaderCard,
+.aboutHeaderRow {
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  overflow: visible !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.aboutHeaderCard::before,
+.aboutHeaderCard::after,
+.aboutHeaderRow::before,
+.aboutHeaderRow::after,
+.aboutHeaderCover {
+  content: none !important;
+  display: none !important;
+}
+
+.aboutHeaderActions,
+.aboutHeaderIcons {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+}
+
+.aboutHeaderActions .iconBtn,
+.aboutHeaderIcons .iconBtn,
+.aboutHeaderIcons .aboutDiscordBtn {
+  width: 56px !important;
+  height: 56px !important;
+  min-width: 56px !important;
+  min-height: 56px !important;
+  padding: 0 !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  border-radius: var(--radius) !important;
+}
+
+.aboutHeaderIcons .aboutDiscordBtn {
+  gap: 0 !important;
+  font-size: 0 !important;
+  line-height: 1 !important;
+}
+
+.aboutHeaderIcons .aboutDiscordIcon,
+.aboutHeaderIcons .aboutDiscordIcon svg {
+  display: block !important;
+  width: 26px !important;
+  height: 26px !important;
+}
+
 /* Remove profile card frame and add Group tab layout */
 .aboutHeaderRow {
   padding: 0 !important;
@@ -8292,6 +8463,63 @@ body {
 
 .aboutHeaderActions .aboutDiscordIcon,
 .aboutHeaderActions .aboutDiscordIcon svg {
+  width: 26px !important;
+  height: 26px !important;
+}
+
+/* Last override: profile header stays frameless and all four social buttons match */
+.aboutHeaderCard,
+.aboutHeaderRow {
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  overflow: visible !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.aboutHeaderCard::before,
+.aboutHeaderCard::after,
+.aboutHeaderRow::before,
+.aboutHeaderRow::after,
+.aboutHeaderCover {
+  content: none !important;
+  display: none !important;
+}
+
+.aboutHeaderActions,
+.aboutHeaderIcons {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+}
+
+.aboutHeaderActions .iconBtn,
+.aboutHeaderIcons .iconBtn,
+.aboutHeaderIcons .aboutDiscordBtn {
+  width: 56px !important;
+  height: 56px !important;
+  min-width: 56px !important;
+  min-height: 56px !important;
+  padding: 0 !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  border-radius: var(--radius) !important;
+}
+
+.aboutHeaderIcons .aboutDiscordBtn {
+  gap: 0 !important;
+  font-size: 0 !important;
+  line-height: 1 !important;
+}
+
+.aboutHeaderIcons .aboutDiscordIcon,
+.aboutHeaderIcons .aboutDiscordIcon svg {
+  display: block !important;
   width: 26px !important;
   height: 26px !important;
 }
