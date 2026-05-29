@@ -1109,3 +1109,41 @@
     height: 21px !important;
   }
 }
+
+@media (max-width: 720px) {
+  .eduItem {
+    grid-template-columns: 24px minmax(0, 1fr) !important;
+    gap: 6px 12px !important;
+    padding: 18px 0 !important;
+  }
+
+  .eduRail {
+    width: 24px !important;
+  }
+
+  .eduRail::before {
+    top: 12px !important;
+    bottom: -34px !important;
+  }
+
+  .eduDot {
+    margin-top: 3px !important;
+  }
+
+  .eduContent {
+    padding: 0 0 18px !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .eduTitle {
+    font-size: 1.05rem;
+  }
+
+  .eduSubtitle,
+  .eduDetails {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+}
