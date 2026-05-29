@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import Reveal from "./Reveal";
 import TechStackIcon from "./TechStackIcon";
+import { profile } from "../content/profile";
 
 const GALLERY_SOURCES = import.meta.glob("/gallery/**/*.{png,jpg,jpeg,webp,avif,gif}", {
   eager: true,
@@ -65,6 +66,20 @@ function Icon({ name }) {
 
 function TabIcon({ name }) {
   if (name === "projects") return <Icon name="code" />;
+  if (name === "group") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M8.5 12a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm7-1a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM3.5 20c.8-3.4 2.9-5.2 5-5.2s4.2 1.8 5 5.2M13.8 15.2c2.5.2 4.7 1.8 5.7 4.8"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    );
+  }
   if (name === "gallery") {
     return (
       <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -351,6 +366,23 @@ function TechCard({ skill, delayMs }) {
   );
 }
 
+function GroupCard({ item, delayMs }) {
+  return (
+    <Reveal delayMs={delayMs}>
+      <a className="groupCard" href={item.href} target="_blank" rel="noreferrer">
+        <span className="groupIcon" aria-hidden="true">
+          <Icon name="globe" />
+        </span>
+        <span className="groupMain">
+          <span className="groupLabel">{item.label}</span>
+          <span className="groupHref">{item.href.replace(/^mailto:/, "").replace(/^https?:\/\//, "")}</span>
+        </span>
+        <span className="groupArrow" aria-hidden="true">↗</span>
+      </a>
+    </Reveal>
+  );
+}
+
 export default function Showcase({
   projects,
   skills,
@@ -448,6 +480,18 @@ export default function Showcase({
             <button
               type="button"
               role="tab"
+              aria-selected={tab === "group"}
+              className={["segBtn", tab === "group" ? "isActive" : ""].join(" ")}
+              onClick={() => setTab("group")}
+            >
+              <span className="segIcon" aria-hidden="true">
+                <TabIcon name="group" />
+              </span>
+              Group
+            </button>
+            <button
+              type="button"
+              role="tab"
               aria-selected={tab === "stack"}
               className={["segBtn", tab === "stack" ? "isActive" : ""].join(" ")}
               onClick={() => setTab("stack")}
@@ -479,6 +523,21 @@ export default function Showcase({
                   skill={skill}
                   delayMs={idx * 35}
                 />
+              ))}
+            </div>
+          ) : null}
+
+          {tab === "group" ? (
+            <div className="groupGrid" aria-label="Group links">
+              {[
+                ...(profile.discordInvite
+                  ? [{ label: "Discord", href: profile.discordInvite }]
+                  : []),
+                ...profile.socials.filter((item) =>
+                  ["GitHub", "LinkedIn", "Twitter"].includes(item.label)
+                ),
+              ].map((item, idx) => (
+                <GroupCard key={item.href} item={item} delayMs={idx * 60} />
               ))}
             </div>
           ) : null}

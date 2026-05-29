@@ -7335,6 +7335,105 @@ body::after,
   height: 26px !important;
 }
 
+/* Remove profile card frame and add Group tab layout */
+.aboutHeaderRow {
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.aboutHeaderRow::before,
+.aboutHeaderRow::after {
+  content: none !important;
+  display: none !important;
+}
+
+.aboutHeaderMain {
+  width: 100%;
+}
+
+.segmented {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+.groupGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.groupCard {
+  position: relative;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  min-height: 86px;
+  padding: 16px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.018)),
+    rgba(10, 10, 10, 0.78);
+  color: #f8fafc;
+  text-decoration: none;
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.055);
+  transition: transform 220ms var(--ease), border-color 220ms var(--ease), box-shadow 220ms var(--ease);
+}
+
+.groupCard:hover {
+  transform: translateY(-2px);
+  border-color: rgba(52, 211, 153, 0.32);
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.48),
+    inset 0 0 0 1px rgba(52, 211, 153, 0.08);
+}
+
+.groupIcon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.045);
+  color: #a7f3d0;
+}
+
+.groupIcon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.groupMain {
+  min-width: 0;
+  display: grid;
+  gap: 5px;
+}
+
+.groupLabel {
+  font-weight: 900;
+}
+
+.groupHref {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgba(244, 244, 245, 0.58);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.groupArrow {
+  color: #34d399;
+  font-weight: 900;
+}
+
 /* Plain CTA buttons: no green orbit */
 .btn2::after,
 .welcomeEnter::after,
