@@ -3,7 +3,7 @@ export default function AnimatedProfileMeta({ text }) {
     <span className="aboutHeaderMetaShine" role="text">
       <span className="aboutHeaderMetaSrOnly">{text}</span>
 
-      <span className="aboutHeaderMetaVisual" aria-hidden="true">
+      <span className="aboutHeaderMetaVisual" data-text={text} aria-hidden="true">
         {Array.from(text).map((char, index) => (
           <span
             key={`${char}-${index}`}

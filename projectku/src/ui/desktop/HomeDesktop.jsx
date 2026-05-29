@@ -4,6 +4,7 @@ import Showcase from "../../components/Showcase";
 import AvatarPlaceholder from "../../components/AvatarPlaceholder";
 import AnimatedProfileMeta from "../../components/AnimatedProfileMeta";
 import EducationTimeline from "../../components/EducationTimeline";
+import TypingCodeBlock from "../../components/TypingCodeBlock";
 import { GithubIcon, LinkedinIcon, MailIcon as MailIcon2 } from "../../components/Icons";
 import { profile } from "../../content/profile";
 
@@ -367,25 +368,7 @@ export default function HomeDesktop({ rootClassName = "homeRoot homeRoot--deskto
                 <span className="heroWorkbenchTitle">portfolio.local</span>
               </div>
               <div className="heroWorkbenchBody">
-                <p>
-                  <span className="codeMuted">const</span> developer = {"{"}
-                </p>
-                <p>
-                  <span className="codeIndent">name:</span> "{profile.name}",
-                </p>
-                <p>
-                  <span className="codeIndent">role:</span> "{profile.role}",
-                </p>
-                <p>
-                  <span className="codeIndent">location:</span> "{profile.location}",
-                </p>
-                <p>
-                  <span className="codeIndent">experience:</span> "{profile.yearsExperience} years",
-                </p>
-                <p>
-                  <span className="codeIndent">stack:</span> [{profile.heroChips.map((chip) => `"${chip}"`).join(", ")}],
-                </p>
-                <p>{"};"}</p>
+                <TypingCodeBlock profile={profile} />
               </div>
             </aside>
           </Reveal>
@@ -483,21 +466,17 @@ export default function HomeDesktop({ rootClassName = "homeRoot homeRoot--deskto
                         href={profile.discordInvite}
                         target="_blank"
                         rel="noreferrer"
+                        aria-label="Discord"
+                        title="Discord"
                       >
                         <span className="aboutDiscordIcon" aria-hidden="true">
                           <svg viewBox="0 0 24 24">
                             <path
-                              d="M7.5 8.5h9a3 3 0 0 1 3 3v2.4a3.6 3.6 0 0 1-3.6 3.6H9.2L6.3 20v-2.5A3.8 3.8 0 0 1 4.5 14V11.5a3 3 0 0 1 3-3Z"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2.2"
-                              strokeLinejoin="round"
+                              d="M19.54 5.34A16.5 16.5 0 0 0 15.58 4l-.2.39c1.42.42 2.08.98 2.08.98a13.3 13.3 0 0 0-8.92 0s.67-.56 2.08-.98L10.42 4c-1.45.24-2.78.7-3.96 1.34C3.96 9.08 3.28 12.74 3.6 16.34A16.2 16.2 0 0 0 8.46 18.8l.98-1.34c-.54-.2-1.05-.45-1.54-.76l.36-.28c2.98 1.4 6.48 1.4 9.48 0l.36.28c-.49.31-1 .56-1.54.76l.98 1.34a16.2 16.2 0 0 0 4.86-2.46c.38-4.18-.64-7.8-2.86-11ZM9.72 14.28c-.94 0-1.7-.86-1.7-1.92s.74-1.92 1.7-1.92c.95 0 1.72.86 1.7 1.92 0 1.06-.75 1.92-1.7 1.92Zm4.56 0c-.94 0-1.7-.86-1.7-1.92s.75-1.92 1.7-1.92c.95 0 1.72.86 1.7 1.92 0 1.06-.75 1.92-1.7 1.92Z"
+                              fill="currentColor"
                             />
-                            <circle cx="10" cy="13" r="1" fill="currentColor" />
-                            <circle cx="14" cy="13" r="1" fill="currentColor" />
                           </svg>
                         </span>
-                        Join Discord
                       </a>
                     ) : null}
                   </div>

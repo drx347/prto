@@ -8,7 +8,7 @@ export const profile = {
   yearsExperience: 3,
   heroChips: ["Next.js", "React", "Lua", "Vercel", "Tailwind CSS", "Discord.js"],
   aboutBadges: [],
-  discordHandle: "@exotickic",
+  discordHandle: "@voixera",
   discordInvite: "https://discord.com/users/975269168184168539",
   education: [
     {
@@ -61,6 +61,7 @@ export const profile = {
         "A web project for presenting SinyalKita with a direct, accessible, and responsive experience.",
       tags: ["Web", "Responsive", "Vercel"],
       showcase: ["Public website", "Responsive layout", "Direct access"],
+      thumbnail: "/sinyalkita.png",
       links: [{ label: "Open Web", href: "https://sinyalkita.site" }],
     },
     {
@@ -69,7 +70,8 @@ export const profile = {
         "A clean web project focused on clarity, presentation, and fast access to the main experience.",
       tags: ["React", "Vite", "Vercel"],
       showcase: ["Clean interface", "Fast deployment", "Responsive web"],
-      links: [{ label: "Open Web", href: "https://clarity-x-vercel.app" }],
+      thumbnail: "/clarityx.png",
+      links: [{ label: "Open Web", href: "https://clarity-x-two.vercel.app" }],
     },
     {
       title: "Sharpness AI",
@@ -77,6 +79,7 @@ export const profile = {
         "An AI-focused web app for improving image sharpness with a simple and direct user flow.",
       tags: ["AI", "React", "Vercel"],
       showcase: ["Image enhancement", "Simple upload flow", "AI utility"],
+      thumbnail: "/sharpnessai.png",
       links: [{ label: "Open Web", href: "https://sharpnessai.vercel.app" }],
     },
     {

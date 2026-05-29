@@ -403,16 +403,43 @@ const PALETTE_SURFACES = {
   },
 };
 
-function applyBackgroundVars(palette) {
+const MONOCHROME_THEME = {
+  id: "monochrome",
+  bg: "#050505",
+  bg2: "#111111",
+  lav: "232, 232, 232",
+  sky: "255, 255, 255",
+  mint: "172, 172, 172",
+  pink: "210, 210, 210",
+  surface: {
+    panel: "rgba(255, 255, 255, 0.055)",
+    panel2: "rgba(255, 255, 255, 0.082)",
+    border: "rgba(255, 255, 255, 0.13)",
+    border2: "rgba(255, 255, 255, 0.24)",
+    accent3: "rgba(255, 255, 255, 0.12)",
+    fxFlowA: "255, 255, 255",
+    fxFlowB: "190, 190, 190",
+    fxFlowC: "128, 128, 128",
+    fxSparkA: "255, 255, 255",
+    fxSparkB: "170, 170, 170",
+  },
+};
+
+function applyBackgroundVars(palette = MONOCHROME_THEME) {
   if (typeof document === "undefined") return;
   const root = document.documentElement;
-  const surface = PALETTE_SURFACES[palette.id] ?? PALETTE_SURFACES.midnight;
-  root.style.setProperty("--bg", palette.bg);
-  root.style.setProperty("--bg2", palette.bg2);
-  root.style.setProperty("--p-lav", palette.lav);
-  root.style.setProperty("--p-sky", palette.sky);
-  root.style.setProperty("--p-mint", palette.mint);
-  root.style.setProperty("--p-pink", palette.pink);
+  const activePalette = palette.id === MONOCHROME_THEME.id ? palette : MONOCHROME_THEME;
+  const surface = activePalette.surface ?? PALETTE_SURFACES[activePalette.id] ?? PALETTE_SURFACES.midnight;
+  root.style.setProperty("--bg", activePalette.bg);
+  root.style.setProperty("--bg2", activePalette.bg2);
+  root.style.setProperty("--p-lav", activePalette.lav);
+  root.style.setProperty("--p-sky", activePalette.sky);
+  root.style.setProperty("--p-mint", activePalette.mint);
+  root.style.setProperty("--p-pink", activePalette.pink);
+  root.style.setProperty("--accent", "rgba(255, 255, 255, 0.96)");
+  root.style.setProperty("--accent2", "rgba(214, 214, 214, 0.82)");
+  root.style.setProperty("--premium-gold", "255, 255, 255");
+  root.style.setProperty("--premium-red", "150, 150, 150");
   root.style.setProperty("--panel", surface.panel);
   root.style.setProperty("--panel2", surface.panel2);
   root.style.setProperty("--border", surface.border);
@@ -423,7 +450,7 @@ function applyBackgroundVars(palette) {
   root.style.setProperty("--fx-flow-c", surface.fxFlowC);
   root.style.setProperty("--fx-spark-a", surface.fxSparkA);
   root.style.setProperty("--fx-spark-b", surface.fxSparkB);
-  root.dataset.palette = palette.id;
+  root.dataset.palette = activePalette.id;
 }
 
 function CodeIcon() {
@@ -471,10 +498,7 @@ function WelcomeThemeScene() {
 }
 
 export default function WelcomeScreen({ entered = false, onEnter }) {
-  const defaultPalette = useMemo(
-    () => PALETTES.find((palette) => palette.id === "steel") ?? PALETTES[0],
-    []
-  );
+  const defaultPalette = useMemo(() => MONOCHROME_THEME, []);
 
   useEffect(() => {
     applyBackgroundVars(defaultPalette);
