@@ -7248,6 +7248,19 @@ body::after,
   .typingCode {
     animation: none;
   }
+
+  .btn2::after,
+  .welcomeEnter::after,
+  .aboutDiscordBtn::after,
+  .iconBtn::after,
+  .pillLink::after,
+  .segBtn::after,
+  .scrollTopBtn::after,
+  .welcomeIconBtn::after,
+  .welcomeSwatch::after,
+  .eduRibbonChip::after {
+    animation: none !important;
+  }
 }
 
 /* Education timeline alignment */
@@ -7636,6 +7649,81 @@ body {
     0 0 22px rgba(52, 211, 153, 0.16);
 }
 
+.btn2,
+.welcomeEnter,
+.aboutDiscordBtn,
+.iconBtn,
+.pillLink,
+.segBtn,
+.scrollTopBtn,
+.welcomeIconBtn,
+.welcomeSwatch,
+.eduRibbonChip {
+  text-shadow: none !important;
+}
+
+.btn2::after,
+.welcomeEnter::after,
+.aboutDiscordBtn::after,
+.iconBtn::after,
+.pillLink::after,
+.segBtn::after,
+.scrollTopBtn::after,
+.welcomeIconBtn::after,
+.welcomeSwatch::after,
+.eduRibbonChip::after {
+  inset: -2px !important;
+  z-index: -2 !important;
+  border-radius: inherit !important;
+  background:
+    conic-gradient(
+      from var(--orbit-angle),
+      transparent 0deg,
+      transparent 72deg,
+      rgba(52, 211, 153, 0.95) 96deg,
+      rgba(167, 243, 208, 0.95) 112deg,
+      rgba(52, 211, 153, 0.95) 128deg,
+      transparent 154deg,
+      transparent 360deg
+    ) !important;
+  filter: none !important;
+  opacity: 0.88 !important;
+  animation: buttonGreenOrbit 2.8s linear infinite;
+}
+
+.btn2::before,
+.welcomeEnter::before,
+.aboutDiscordBtn::before,
+.iconBtn::before,
+.pillLink::before,
+.segBtn::before,
+.scrollTopBtn::before,
+.welcomeIconBtn::before,
+.welcomeSwatch::before,
+.eduRibbonChip::before {
+  content: "" !important;
+  position: absolute;
+  inset: 1px;
+  z-index: -1;
+  border-radius: calc(var(--radius) - 1px);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012)),
+    #050505 !important;
+  pointer-events: none;
+}
+
+@property --orbit-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes buttonGreenOrbit {
+  to {
+    --orbit-angle: 360deg;
+  }
+}
+
 .btn2:hover,
 .welcomeEnter:hover,
 .aboutDiscordBtn:hover,
@@ -7651,8 +7739,7 @@ body {
     #050505 !important;
   box-shadow:
     0 24px 64px rgba(0, 0, 0, 0.58),
-    0 0 0 1px rgba(52, 211, 153, 0.2) inset,
-    0 0 34px rgba(52, 211, 153, 0.14) !important;
+    0 0 0 1px rgba(52, 211, 153, 0.2) inset !important;
 }
 
 .btn2:hover::after,
@@ -7665,7 +7752,8 @@ body {
 .welcomeIconBtn:hover::after,
 .eduRibbonChip:hover::after {
   opacity: 1;
-  filter: blur(8px);
+  filter: none;
+  animation-duration: 1.45s;
 }
 
 .segBtn.isActive,
