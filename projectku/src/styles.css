@@ -8020,3 +8020,91 @@ body {
   padding: 1px;
   animation-duration: 2.4s !important;
 }
+
+/* Cleaner visible orbit: full outline, not inside the button */
+.navV2Links,
+.btn2,
+.welcomeEnter,
+.aboutDiscordBtn,
+.iconBtn,
+.pillLink,
+.segBtn,
+.scrollTopBtn,
+.welcomeIconBtn,
+.welcomeSwatch,
+.eduRibbonChip {
+  position: relative;
+  overflow: hidden !important;
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.038), rgba(255, 255, 255, 0.012)),
+    #050505 !important;
+}
+
+.navV2Links::after,
+.btn2::after,
+.welcomeEnter::after,
+.aboutDiscordBtn::after,
+.iconBtn::after,
+.pillLink::after,
+.segBtn::after,
+.scrollTopBtn::after,
+.welcomeIconBtn::after,
+.welcomeSwatch::after,
+.eduRibbonChip::after {
+  content: "" !important;
+  position: absolute;
+  inset: 0 !important;
+  z-index: 0 !important;
+  padding: 1px;
+  border-radius: inherit !important;
+  background:
+    conic-gradient(
+      from var(--orbit-angle),
+      rgba(52, 211, 153, 0) 0deg,
+      rgba(52, 211, 153, 0) 210deg,
+      rgba(52, 211, 153, 0.16) 246deg,
+      rgba(52, 211, 153, 0.95) 286deg,
+      rgba(167, 243, 208, 1) 306deg,
+      rgba(52, 211, 153, 0.82) 326deg,
+      rgba(52, 211, 153, 0.12) 346deg,
+      rgba(52, 211, 153, 0) 360deg
+    ) !important;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  opacity: 1 !important;
+  filter: none !important;
+  pointer-events: none;
+  animation: buttonGreenOrbit 3.2s linear infinite !important;
+}
+
+.navV2Links > *,
+.btn2 > *,
+.welcomeEnter > *,
+.aboutDiscordBtn > *,
+.iconBtn > *,
+.pillLink > *,
+.segBtn > *,
+.scrollTopBtn > *,
+.welcomeIconBtn > *,
+.welcomeSwatch > *,
+.eduRibbonChip > * {
+  position: relative;
+  z-index: 1;
+}
+
+.btn2:hover::after,
+.welcomeEnter:hover::after,
+.aboutDiscordBtn:hover::after,
+.iconBtn:hover::after,
+.pillLink:hover::after,
+.segBtn:hover::after,
+.scrollTopBtn:hover::after,
+.welcomeIconBtn:hover::after,
+.eduRibbonChip:hover::after,
+.navV2Links:hover::after {
+  animation-duration: 2s !important;
+}
