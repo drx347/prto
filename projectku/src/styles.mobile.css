@@ -1087,6 +1087,14 @@
     line-height: 1.65;
   }
 
+  .aboutQuote {
+    grid-template-columns: 1fr !important;
+  }
+
+  .aboutQuoteMark {
+    display: none !important;
+  }
+
   .aboutHeaderActions .aboutDiscordBtn {
     width: 46px !important;
     height: 46px !important;
