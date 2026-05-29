@@ -7120,30 +7120,41 @@ body::after,
 }
 
 .typingCode {
-  --typing-chars: 198;
-  --typing-duration: 9s;
   position: relative;
-  width: max-content;
+  width: 100%;
   max-width: 100%;
   margin: 0;
   color: rgba(238, 238, 238, 0.9);
   white-space: pre-wrap;
-  overflow: hidden;
+  overflow: visible;
   font: inherit;
   line-height: inherit;
-  animation: terminalTyping var(--typing-duration) steps(var(--typing-chars), end) infinite;
+  min-height: 12.6em;
 }
 
 .typingCode code {
   font: inherit;
 }
 
-.typingCode::first-line {
+.typingCodeGhost {
+  display: block;
+  visibility: hidden;
+  pointer-events: none;
+  white-space: pre-wrap;
+}
+
+.typingCodeVisible {
+  position: absolute;
+  inset: 0;
+  display: block;
+  white-space: pre-wrap;
+}
+
+.typingCodeVisible::first-line {
   color: #ffffff;
 }
 
-.typingCode::after {
-  content: "";
+.typingCursor {
   display: inline-block;
   width: 0.58em;
   height: 1.05em;
@@ -7152,24 +7163,6 @@ body::after,
   background: #ffffff;
   box-shadow: 0 0 14px rgba(255, 255, 255, 0.24);
   animation: terminalCursor 780ms steps(1, end) infinite;
-}
-
-@keyframes terminalTyping {
-  0%,
-  8% {
-    max-height: 1.8em;
-    clip-path: inset(0 100% 0 0);
-  }
-  46%,
-  72% {
-    max-height: 18em;
-    clip-path: inset(0 0 0 0);
-  }
-  86%,
-  100% {
-    max-height: 18em;
-    clip-path: inset(0 100% 0 0);
-  }
 }
 
 @keyframes terminalCursor {
@@ -7254,7 +7247,6 @@ body::after,
 
   .typingCode {
     animation: none;
-    clip-path: none;
   }
 }
 
@@ -7456,7 +7448,7 @@ body {
   color: #a7f3d0 !important;
 }
 
-.typingCode::after,
+.typingCursor,
 .caret {
   background: #34d399 !important;
   box-shadow: 0 0 18px rgba(52, 211, 153, 0.42) !important;
