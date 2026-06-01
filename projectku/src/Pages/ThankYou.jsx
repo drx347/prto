@@ -3,7 +3,7 @@ export default function ThankYou() {
     <main>
       <div className="container" style={{ padding: "60px 0" }}>
         <h1 style={{ margin: 0 }}>Thank You</h1>
-        <p className="muted">Terima kasih! Placeholder sesuai struktur.</p>
+        <p className="muted">Thanks! Placeholder page kept for the app structure.</p>
       </div>
     </main>
   );

@@ -221,8 +221,8 @@ export default function App() {
               type="button"
               className={`scrollTopBtn${showScrollTop ? " isVisible" : ""}`}
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              aria-label="Kembali ke atas"
-              title="Kembali ke atas"
+              aria-label="Back to top"
+              title="Back to top"
             >
               <ArrowUpIcon />
             </button>

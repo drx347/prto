@@ -384,11 +384,11 @@ export default function HomeDesktop({ rootClassName = "homeRoot homeRoot--deskto
               <div className="aboutHeaderCover" aria-hidden="true" />
               <div className="aboutSectionHead aboutSectionHeadCentered" aria-hidden="true" />
               <div className="aboutHeaderRow">
-                <div className="aboutHeaderMain" aria-label="Profil">
+                <div className="aboutHeaderMain" aria-label="Profile">
                   <div className="aboutHeaderTop">
-                    <div className="aboutHeaderAvatarWrap" aria-label="Foto profil">
+                    <div className="aboutHeaderAvatarWrap" aria-label="Profile photo">
                       <div className="aboutHeaderAvatarInner">
-                        <AvatarPlaceholder alt={`Foto ${profile.name}`} />
+                        <AvatarPlaceholder alt={`${profile.name} profile photo`} />
                       </div>
                       <span className="aboutHeaderStatus" aria-hidden="true" />
                     </div>
@@ -656,7 +656,7 @@ export default function HomeDesktop({ rootClassName = "homeRoot homeRoot--deskto
             <div className="faqHeader">
               <h2 className="h2V2">FAQ</h2>
               <p className="muted">
-                Beberapa pertanyaan yang sering ditanyain tentang role dan proyek.
+                A few common questions about the role and projects.
               </p>
             </div>
           </Reveal>
@@ -664,45 +664,45 @@ export default function HomeDesktop({ rootClassName = "homeRoot homeRoot--deskto
           <div className="faqGrid">
             <Reveal delayMs={60}>
               <details className="faqItem">
-                <summary className="faqQ">Apa itu Fullstack Developer?</summary>
+                <summary className="faqQ">What is a Full Stack Developer?</summary>
                 <div className="faqA muted">
-                  Fullstack Developer adalah developer yang bisa menangani sisi{" "}
-                  <b>Frontend</b> (UI/UX, tampilan web) dan <b>Backend</b> (server,
-                  API, database). Biasanya nggak harus “jago semuanya”, tapi paham
-                  alur end-to-end dari aplikasi.
+                  A Full Stack Developer can work across both <b>Frontend</b> (UI/UX,
+                  web interfaces) and <b>Backend</b> (servers, APIs, databases).
+                  It does not always mean mastering everything, but it does mean
+                  understanding the end-to-end flow of an application.
                 </div>
               </details>
             </Reveal>
 
             <Reveal delayMs={90}>
               <details className="faqItem">
-                <summary className="faqQ">Apa bedanya Frontend dan Backend?</summary>
+                <summary className="faqQ">What is the difference between Frontend and Backend?</summary>
                 <div className="faqA muted">
-                  Frontend fokus di tampilan dan interaksi pengguna. Backend fokus
-                  di logika aplikasi, autentikasi, penyimpanan data, dan API yang
-                  dipakai frontend.
+                  Frontend focuses on the interface and user interactions. Backend
+                  focuses on application logic, authentication, data storage, and
+                  the APIs used by the frontend.
                 </div>
               </details>
             </Reveal>
 
             <Reveal delayMs={120}>
               <details className="faqItem">
-                <summary className="faqQ">Teknologi apa saja yang sering dipakai?</summary>
+                <summary className="faqQ">Which technologies are used most often?</summary>
                 <div className="faqA muted">
-                  Paling sering: <b>React</b> + <b>Vite</b> / <b>Next.js</b> untuk frontend,{" "}
-                  <b>Tailwind CSS</b> / CSS untuk styling, dan <b>Node.js</b> untuk kebutuhan backend
-                  atau tooling. Untuk data biasanya <b>MongoDB</b> / SQL, dan kadang pakai <b>Three.js</b>{" "}
-                  buat visual/interaktif.
+                  Most often: <b>React</b> + <b>Vite</b> / <b>Next.js</b> for frontend,{" "}
+                  <b>Tailwind CSS</b> / CSS for styling, and <b>Node.js</b> for backend
+                  needs or tooling. For data, the stack usually uses <b>MongoDB</b> / SQL,
+                  with <b>Three.js</b> sometimes added for interactive visuals.
                 </div>
               </details>
             </Reveal>
 
             <Reveal delayMs={150}>
               <details className="faqItem">
-                <summary className="faqQ">Apakah project-nya bisa dicoba (demo)?</summary>
+                <summary className="faqQ">Can the projects be tried as demos?</summary>
                 <div className="faqA muted">
-                  Bisa. Masuk ke bagian <b>Projects</b>, lalu klik tombol <b>Open Web</b> / <b>Open App</b>{" "}
-                  di kartu project. Contoh demo:{" "}
+                  Yes. Go to the <b>Projects</b> section, then click <b>Open Web</b> / <b>Open App</b>{" "}
+                  on a project card. Example demo:{" "}
                   <code className="inlineCode">helloenglish.vercel.app</code>.
                 </div>
               </details>

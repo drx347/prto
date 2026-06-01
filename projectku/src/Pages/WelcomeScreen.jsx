@@ -535,7 +535,7 @@ export default function WelcomeScreen({ entered = false, onEnter }) {
             <span className="welcomeProgressFill" />
           </div>
           <p className="welcomeStatus muted" aria-live="polite">
-            Menyiapkan halaman dan musik...
+            Preparing the page and music...
           </p>
         </div>
       </div>

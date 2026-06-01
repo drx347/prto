@@ -30,7 +30,7 @@ export default function About() {
           </Reveal>
           <Reveal delayMs={90}>
             <div className="aboutSide">
-              <AvatarPlaceholder alt={`Foto ${profile.name}`} />
+              <AvatarPlaceholder alt={`${profile.name} profile photo`} />
             </div>
           </Reveal>
         </div>

@@ -4,7 +4,7 @@ export default function Illustration() {
       className="heroArt"
       viewBox="0 0 720 520"
       role="img"
-      aria-label="Ilustrasi perangkat dan ikon teknologi"
+      aria-label="Device and technology icon illustration"
     >
       <defs>
         <radialGradient id="haloGrad" cx="40%" cy="30%" r="80%">

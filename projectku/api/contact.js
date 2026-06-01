@@ -23,7 +23,7 @@ export default async function handler(req, res) {
   if (req.method !== "POST") {
     res.status(405).json({
       ok: false,
-      message: "Method tidak didukung untuk endpoint ini.",
+      message: "This endpoint does not support that method.",
     });
     return;
   }
@@ -33,7 +33,7 @@ export default async function handler(req, res) {
   if (payload === null) {
     res.status(400).json({
       ok: false,
-      message: "Payload JSON tidak valid.",
+      message: "The JSON payload is invalid.",
     });
     return;
   }
@@ -48,7 +48,7 @@ export default async function handler(req, res) {
     console.error("[contact] unexpected error:", error);
     res.status(500).json({
       ok: false,
-      message: "Terjadi error internal saat memproses contact form.",
+      message: "An internal error occurred while processing the contact form.",
     });
   }
 }

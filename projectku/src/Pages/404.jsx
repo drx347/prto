@@ -3,9 +3,9 @@ export default function NotFound() {
     <main>
       <div className="container" style={{ padding: "60px 0" }}>
         <h1 style={{ margin: 0 }}>404</h1>
-        <p className="muted">Halaman tidak ditemukan.</p>
+        <p className="muted">Page not found.</p>
         <a className="pillLink" href="#home">
-          Kembali <span aria-hidden="true">↗</span>
+          Back <span aria-hidden="true">↗</span>
         </a>
       </div>
     </main>

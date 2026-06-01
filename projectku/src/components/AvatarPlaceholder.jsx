@@ -15,7 +15,7 @@ function getInitials(label) {
 
 export default function AvatarPlaceholder({
   src = "/fotoprofil.png",
-  alt = "Foto profil",
+  alt = "Profile photo",
 } = {}) {
   const [failed, setFailed] = useState(false);
   const showImage = Boolean(src) && !failed;
@@ -24,7 +24,7 @@ export default function AvatarPlaceholder({
   return (
     <div
       className={`avatar${showImage ? " avatarHasImage" : ""}`}
-      aria-label={showImage ? alt : "Foto belum diisi"}
+      aria-label={showImage ? alt : "Photo not set"}
     >
       {showImage ? (
         <img

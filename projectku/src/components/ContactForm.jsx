@@ -48,7 +48,7 @@ export default function ContactForm({
 
     setSubmitState({
       status: "submitting",
-      message: "Mengirim pesan...",
+      message: "Sending message...",
       errors: EMPTY_ERRORS,
     });
 
@@ -68,7 +68,7 @@ export default function ContactForm({
       if (!response.ok || !data?.ok) {
         setSubmitState({
           status: "error",
-          message: data?.message || "Pesan gagal dikirim. Coba lagi sebentar.",
+          message: data?.message || "Message failed to send. Please try again shortly.",
           errors,
         });
         return;
@@ -77,13 +77,13 @@ export default function ContactForm({
       form.reset();
       setSubmitState({
         status: "success",
-        message: data.message || "Pesan berhasil dikirim.",
+        message: data.message || "Message sent successfully.",
         errors: EMPTY_ERRORS,
       });
     } catch {
       setSubmitState({
         status: "error",
-        message: "Form pesan sedang tidak bisa diproses sekarang. Coba lagi beberapa saat.",
+        message: "The contact form cannot be processed right now. Please try again later.",
         errors: EMPTY_ERRORS,
       });
     }
@@ -92,7 +92,7 @@ export default function ContactForm({
   return (
     <form className="formV2" onSubmit={handleSubmit}>
       <label className="fieldV2">
-        <span className="labelV2">Nama</span>
+        <span className="labelV2">Name</span>
         <input
           className="inputV2"
           name="name"
@@ -124,7 +124,7 @@ export default function ContactForm({
       </label>
 
       <label className="fieldV2">
-        <span className="labelV2">Pesan</span>
+        <span className="labelV2">Message</span>
         <textarea
           className="inputV2 textareaV2"
           name="message"
@@ -158,11 +158,11 @@ export default function ContactForm({
         role="status"
         aria-live="polite"
       >
-        {submitState.message || "Isi form di bawah untuk kirim pesan langsung ke saya."}
+        {submitState.message || "Fill out the form below to send me a direct message."}
       </p>
 
       <p className="fine muted">
-        Pesan dari form ini akan langsung masuk ke Discord <b>{discordHandle}</b>.
+        Messages from this form go directly to Discord <b>{discordHandle}</b>.
       </p>
     </form>
   );

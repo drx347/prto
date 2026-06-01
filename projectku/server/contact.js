@@ -45,21 +45,21 @@ function validatePayload(payload) {
   const errors = {};
 
   if (!payload.name) {
-    errors.name = "Nama wajib diisi.";
+    errors.name = "Name is required.";
   } else if (payload.name.length < 2) {
-    errors.name = "Nama minimal 2 karakter.";
+    errors.name = "Name must be at least 2 characters.";
   }
 
   if (!payload.email) {
-    errors.email = "Email wajib diisi.";
+    errors.email = "Email is required.";
   } else if (!EMAIL_PATTERN.test(payload.email)) {
-    errors.email = "Format email belum valid.";
+    errors.email = "Please enter a valid email address.";
   }
 
   if (!payload.message) {
-    errors.message = "Pesan wajib diisi.";
+    errors.message = "Message is required.";
   } else if (payload.message.length < 10) {
-    errors.message = "Pesan minimal 10 karakter.";
+    errors.message = "Message must be at least 10 characters.";
   }
 
   return errors;
@@ -186,7 +186,7 @@ export async function processContactSubmission(rawPayload, meta = {}) {
       status: 400,
       body: {
         ok: false,
-        message: "Tolong cek lagi data contact yang kamu isi.",
+        message: "Please check the contact details you entered.",
         errors,
       },
     };
@@ -208,7 +208,7 @@ export async function processContactSubmission(rawPayload, meta = {}) {
       body: {
         ok: false,
         message:
-          "Penerima pesan belum dikonfigurasi. Tambahkan CONTACT_DISCORD_WEBHOOK_URL pada environment agar form bisa mengirim ke Discord.",
+          "The message recipient is not configured. Add CONTACT_DISCORD_WEBHOOK_URL to the environment so the form can send messages to Discord.",
       },
     };
   }
@@ -226,7 +226,7 @@ export async function processContactSubmission(rawPayload, meta = {}) {
       status: 502,
       body: {
         ok: false,
-        message: "Pesan belum berhasil dikirim ke inbox. Coba lagi beberapa saat.",
+        message: "The message could not be delivered to the inbox. Please try again later.",
       },
     };
   }
@@ -235,7 +235,7 @@ export async function processContactSubmission(rawPayload, meta = {}) {
     status: 200,
     body: {
       ok: true,
-      message: "Pesan berhasil dikirim. Terima kasih, saya akan membalas secepatnya.",
+      message: "Message sent successfully. Thanks, I will reply as soon as possible.",
     },
   };
 }
