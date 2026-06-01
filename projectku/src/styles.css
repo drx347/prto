@@ -7849,6 +7849,14 @@ html body .welcomeScreen .welcomeIconBtn svg {
   height: 27px;
 }
 
+.groupLogo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
 .groupHeading {
   min-width: 0;
   display: grid;

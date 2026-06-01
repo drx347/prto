@@ -376,7 +376,11 @@ function GroupCard({ item, delayMs }) {
       <article className="groupCard">
         <div className="groupHeader">
           <span className="groupIcon" aria-hidden="true">
-            <Icon name="globe" />
+            {item.logo ? (
+              <img className="groupLogo" src={item.logo} alt="" loading="lazy" />
+            ) : (
+              <Icon name="globe" />
+            )}
           </span>
           <div className="groupHeading">
             <p className="groupEyebrow">{item.affiliation}</p>
@@ -397,7 +401,7 @@ function GroupCard({ item, delayMs }) {
         <dl className="groupInfoGrid">
           {item.createdAt ? (
             <div>
-              <dt>Dibuat</dt>
+              <dt>Created</dt>
               <dd>{item.createdAt}</dd>
             </div>
           ) : null}
@@ -416,7 +420,7 @@ function GroupCard({ item, delayMs }) {
         </dl>
 
         {item.focus?.length ? (
-          <ul className="groupFocusList" aria-label="Fokus SyncedC0de">
+          <ul className="groupFocusList" aria-label="SyncedC0de focus areas">
             {item.focus.map((focus) => (
               <li key={focus}>{focus}</li>
             ))}

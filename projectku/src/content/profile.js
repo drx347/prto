@@ -13,20 +13,21 @@ export const profile = {
   groups: [
     {
       name: "SyncedC0de",
-      createdAt: "20 Mei 2026",
+      logo: "/A7OMIC.png",
+      createdAt: "May 20, 2026",
       affiliation: "Part of A7OMIC",
       inviteLabel: "discord.gg/getsades",
       inviteUrl: "https://discord.gg/getsades",
       summary:
-        "SyncedC0de adalah grup komunitas yang dibuat sebagai ruang belajar, ngobrol, dan kolaborasi seputar coding serta project digital.",
+        "SyncedC0de is a community group built as a space to learn, talk, and collaborate around coding and digital projects.",
       description: [
-        "Grup ini dibuat pada 20 Mei 2026 dan menjadi bagian dari A7OMIC. SyncedC0de berfokus pada suasana yang santai tapi tetap produktif, tempat member bisa saling bertukar ide, membahas problem teknis, dan mengembangkan project bersama.",
-        "Di dalamnya, pembahasan bisa mencakup web development, Discord bot, scripting, eksperimen UI, sampai proses membangun project dari ide mentah menjadi sesuatu yang bisa dipakai.",
+        "Created on May 20, 2026, SyncedC0de is part of A7OMIC and focuses on a relaxed but productive atmosphere where members can exchange ideas, discuss technical problems, and build projects together.",
+        "Inside the group, conversations can cover web development, Discord bots, scripting, UI experiments, and the process of turning early ideas into usable projects.",
       ],
       focus: [
-        "Diskusi coding dan problem solving",
-        "Kolaborasi project web, bot, dan scripting",
-        "Tempat belajar bareng di bawah A7OMIC",
+        "Coding discussions and problem solving",
+        "Web, bot, and scripting project collaboration",
+        "A shared learning space under A7OMIC",
       ],
     },
   ],
