@@ -1,5 +1,6 @@
-import { GithubIcon } from "../components/Icons";
-import { useEffect, useMemo } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
+
+const AUTO_ENTER_DELAY_MS = 4800;
 
 const PALETTES = [
   {
@@ -453,41 +454,6 @@ function applyBackgroundVars(palette = MONOCHROME_THEME) {
   root.dataset.palette = activePalette.id;
 }
 
-function CodeIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        d="M9 18 3.5 12 9 6M15 6l5.5 6L15 18"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function UserIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        d="M12 12a4.5 4.5 0 1 0-4.5-4.5A4.5 4.5 0 0 0 12 12Z"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.4"
-      />
-      <path
-        d="M4.5 20c1.6-3.8 5-6 7.5-6s5.9 2.2 7.5 6"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.4"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
 function WelcomeThemeScene() {
   return (
     <div className="welcomeThemeScene" aria-hidden="true">
@@ -499,10 +465,44 @@ function WelcomeThemeScene() {
 
 export default function WelcomeScreen({ entered = false, onEnter }) {
   const defaultPalette = useMemo(() => MONOCHROME_THEME, []);
+  const didEnterRef = useRef(false);
 
   useEffect(() => {
     applyBackgroundVars(defaultPalette);
   }, [defaultPalette]);
+
+  useEffect(() => {
+    didEnterRef.current = entered;
+  }, [entered]);
+
+  const requestEnter = useCallback(() => {
+    if (didEnterRef.current) return;
+    didEnterRef.current = true;
+    onEnter?.();
+  }, [onEnter]);
+
+  useEffect(() => {
+    if (entered || typeof window === "undefined") return;
+
+    const reduceMotion =
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
+    const timer = window.setTimeout(
+      requestEnter,
+      reduceMotion ? 900 : AUTO_ENTER_DELAY_MS
+    );
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Enter" || event.key === " " || event.key === "Escape") {
+        requestEnter();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [entered, requestEnter]);
 
   return (
     <main
@@ -510,35 +510,33 @@ export default function WelcomeScreen({ entered = false, onEnter }) {
       aria-label="Welcome"
       aria-hidden={entered}
       inert={entered}
+      onPointerDown={requestEnter}
     >
       <WelcomeThemeScene />
       <div className="container welcomeInner">
-        <div className="welcomeIcons" aria-hidden="true">
-          <div className="welcomeIconBtn">
-            <CodeIcon />
-          </div>
-          <div className="welcomeIconBtn">
-            <UserIcon />
-          </div>
-          <div className="welcomeIconBtn">
-            <GithubIcon title="GitHub" size={20} />
-          </div>
+        <div className="welcomeLoader" aria-hidden="true">
+          <span className="welcomeLoaderRing" />
+          <span className="welcomeLoaderRing welcomeLoaderRingDelay" />
+          <span className="welcomeLoaderCore" />
         </div>
 
+        <p className="welcomeKicker">Faisal Riza Portfolio</p>
+
         <h1 className="welcomeTitle">
-          <span className="welcomeTitleTop">Welcome To</span>
-          <span className="welcomeTitleBottom welcomeAccent">Faisal Riza Portfolio</span>
+          <span className="welcomeTitleTop">Loading</span>
+          <span className="welcomeTitleBottom welcomeAccent">Portfolio</span>
         </h1>
 
-        <div className="welcomeActions">
-          <button
-            type="button"
-            className="welcomeEnter"
-            onClick={() => onEnter?.()}
-          >
-            Enter Portfolio
-          </button>
-          <p className="welcomeHint muted">Tap/click untuk masuk.</p>
+        <div
+          className="welcomeActions welcomeAuto"
+          style={{ "--welcome-auto-delay": `${AUTO_ENTER_DELAY_MS}ms` }}
+        >
+          <div className="welcomeProgressTrack" aria-hidden="true">
+            <span className="welcomeProgressFill" />
+          </div>
+          <p className="welcomeStatus muted" aria-live="polite">
+            Menyiapkan halaman dan musik...
+          </p>
         </div>
       </div>
     </main>

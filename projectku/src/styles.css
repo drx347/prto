@@ -7392,6 +7392,248 @@ body::after,
   height: 26px !important;
 }
 
+/* Automatic welcome splash */
+html body .welcomeScreen {
+  --welcome-auto-delay: 3000ms;
+  background:
+    linear-gradient(180deg, rgba(4, 4, 5, 0.88), rgba(8, 10, 12, 0.96)),
+    #050505 !important;
+  cursor: default;
+}
+
+html body .welcomeScreen .welcomeThemeScene {
+  opacity: 1;
+}
+
+html body .welcomeScreen .welcomeThemeScene::before {
+  inset: clamp(16px, 2.2vw, 32px) !important;
+  border-radius: 8px;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.034) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(52, 211, 153, 0.032) 1px, transparent 1px) !important;
+  background-size: 56px 56px !important;
+  opacity: 0.52 !important;
+}
+
+html body .welcomeScreen .welcomeThemeScene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 0%, rgba(52, 211, 153, 0.12) 48%, transparent 58%),
+    linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.035) 52%, transparent 60%);
+  opacity: 0.36;
+  transform: translate3d(-12%, 0, 0);
+  animation: welcomeScan 5.6s ease-in-out infinite;
+}
+
+html body .welcomeScreen .welcomeThemeGlow {
+  display: none !important;
+}
+
+html body .welcomeScreen .welcomeInner {
+  width: min(800px, calc(100vw - 48px)) !important;
+  gap: clamp(12px, 2vh, 18px) !important;
+}
+
+.welcomeLoader {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: clamp(92px, 12vw, 128px);
+  height: clamp(92px, 12vw, 128px);
+  margin-bottom: clamp(4px, 1.2vh, 12px);
+  animation: welcomeFloat 5.8s ease-in-out infinite;
+}
+
+.welcomeLoader::before {
+  content: "";
+  position: absolute;
+  inset: 22%;
+  border-radius: 999px;
+  background: rgba(52, 211, 153, 0.2);
+  filter: blur(22px);
+  opacity: 0.8;
+}
+
+.welcomeLoaderRing {
+  position: absolute;
+  inset: 7px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top-color: rgba(167, 243, 208, 0.95);
+  border-right-color: rgba(52, 211, 153, 0.36);
+  animation: welcomeLoaderSpin 1.35s linear infinite;
+}
+
+.welcomeLoaderRingDelay {
+  inset: 21px;
+  border-top-color: rgba(96, 165, 250, 0.88);
+  border-right-color: rgba(167, 243, 208, 0.24);
+  animation-duration: 1.9s;
+  animation-direction: reverse;
+}
+
+.welcomeLoaderCore {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: clamp(24px, 3vw, 34px);
+  height: clamp(24px, 3vw, 34px);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 35% 32%, #ecfdf5 0 9%, #a7f3d0 10% 26%, transparent 27%),
+    rgba(52, 211, 153, 0.16);
+  border: 1px solid rgba(167, 243, 208, 0.48);
+  box-shadow:
+    0 0 0 8px rgba(52, 211, 153, 0.08),
+    0 0 40px rgba(52, 211, 153, 0.22);
+}
+
+.welcomeKicker {
+  margin: 0;
+  color: rgba(167, 243, 208, 0.82);
+  font-size: clamp(0.86rem, 1.7vw, 1rem);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.welcomeTitle {
+  max-width: 760px !important;
+  gap: clamp(4px, 0.8vh, 8px) !important;
+  letter-spacing: 0 !important;
+}
+
+.welcomeTitleTop,
+.welcomeTitleBottom {
+  letter-spacing: 0 !important;
+}
+
+.welcomeTitleTop {
+  font-size: clamp(3rem, 7vw, 5.8rem) !important;
+  line-height: 0.92;
+  color: #f8fafc !important;
+  font-weight: 900 !important;
+}
+
+.welcomeTitleBottom {
+  font-size: clamp(3.2rem, 8.2vw, 6.8rem) !important;
+  line-height: 0.9;
+  font-weight: 900 !important;
+  color: #a7f3d0 !important;
+}
+
+.welcomeLead {
+  max-width: 52ch;
+  margin: 0;
+  color: rgba(226, 232, 240, 0.68) !important;
+  font-size: clamp(0.96rem, 2vw, 1.08rem);
+  line-height: 1.65;
+  text-wrap: balance;
+}
+
+.welcomeIcons {
+  gap: 10px !important;
+  margin: clamp(2px, 0.8vh, 6px) 0 0 !important;
+}
+
+html body .welcomeScreen .welcomeIconBtn {
+  width: clamp(44px, 5vw, 54px) !important;
+  height: clamp(44px, 5vw, 54px) !important;
+  border-radius: 8px !important;
+  color: rgba(248, 250, 252, 0.92);
+}
+
+html body .welcomeScreen .welcomeIconBtn svg {
+  width: 22px !important;
+  height: 22px !important;
+}
+
+.welcomeActions {
+  margin-top: clamp(4px, 1vh, 10px) !important;
+}
+
+.welcomeAuto {
+  width: min(300px, 74vw);
+  gap: 12px !important;
+}
+
+.welcomeProgressTrack {
+  width: 100%;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.045);
+}
+
+.welcomeProgressFill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left center;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #34d399, #a7f3d0, #60a5fa);
+  box-shadow: 0 0 26px rgba(52, 211, 153, 0.28);
+  animation: welcomeAutoLoad var(--welcome-auto-delay) linear both;
+}
+
+.welcomeStatus {
+  margin: 0;
+  color: rgba(226, 232, 240, 0.62) !important;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+@keyframes welcomeAutoLoad {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes welcomeLoaderSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes welcomeFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -7px, 0);
+  }
+}
+
+@keyframes welcomeScan {
+  0%,
+  100% {
+    transform: translate3d(-14%, 0, 0);
+    opacity: 0.24;
+  }
+  50% {
+    transform: translate3d(14%, 0, 0);
+    opacity: 0.4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcomeLoader,
+  .welcomeLoaderRing,
+  .welcomeThemeScene::after {
+    animation: none !important;
+  }
+
+  .welcomeProgressFill {
+    animation-duration: 900ms !important;
+  }
+}
+
 /* Final profile header cleanup: no card, Discord is just the fourth icon */
 .aboutHeaderCard,
 .aboutHeaderRow {
@@ -7530,18 +7772,17 @@ body::after,
 
 .groupGrid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: minmax(0, 920px);
+  justify-content: center;
+  gap: 14px;
 }
 
 .groupCard {
   position: relative;
   display: grid;
-  grid-template-columns: 42px minmax(0, 1fr) auto;
-  gap: 12px;
-  align-items: center;
-  min-height: 86px;
-  padding: 16px;
+  gap: 18px;
+  min-height: 0;
+  padding: clamp(20px, 3vw, 30px);
   overflow: hidden;
   border-radius: var(--radius);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -7556,6 +7797,17 @@ body::after,
   transition: transform 220ms var(--ease), border-color 220ms var(--ease), box-shadow 220ms var(--ease);
 }
 
+.groupCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(520px 220px at 12% 0%, rgba(52, 211, 153, 0.14), transparent 70%),
+    radial-gradient(420px 240px at 86% 16%, rgba(88, 101, 242, 0.11), transparent 74%);
+  opacity: 0.9;
+}
+
 .groupCard:hover {
   transform: translateY(-2px);
   border-color: rgba(52, 211, 153, 0.32);
@@ -7564,9 +7816,26 @@ body::after,
     inset 0 0 0 1px rgba(52, 211, 153, 0.08);
 }
 
+.groupHeader,
+.groupLead,
+.groupDescription,
+.groupInfoGrid,
+.groupFocusList,
+.groupJoin {
+  position: relative;
+  z-index: 1;
+}
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 .groupIcon {
-  width: 42px;
-  height: 42px;
+  flex: 0 0 auto;
+  width: 58px;
+  height: 58px;
   display: grid;
   place-items: center;
   border-radius: var(--radius);
@@ -7576,28 +7845,131 @@ body::after,
 }
 
 .groupIcon svg {
-  width: 21px;
-  height: 21px;
+  width: 27px;
+  height: 27px;
 }
 
-.groupMain {
+.groupHeading {
   min-width: 0;
   display: grid;
-  gap: 5px;
+  gap: 6px;
+}
+
+.groupEyebrow {
+  margin: 0;
+  color: rgba(167, 243, 208, 0.78);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0;
 }
 
 .groupLabel {
+  margin: 0;
+  color: #f8fafc;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1;
   font-weight: 900;
 }
 
-.groupHref {
+.groupLead {
+  max-width: 76ch;
+  margin: 0;
+  color: rgba(248, 250, 252, 0.86);
+  font-size: clamp(1rem, 1.7vw, 1.16rem);
+  line-height: 1.7;
+  font-weight: 750;
+}
+
+.groupDescription {
+  display: grid;
+  gap: 10px;
+  max-width: 82ch;
+}
+
+.groupDescription p {
+  margin: 0;
+  color: rgba(244, 244, 245, 0.64);
+  line-height: 1.72;
+}
+
+.groupInfoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 2px 0 0;
+}
+
+.groupInfoGrid div {
+  min-width: 0;
+  padding: 13px 14px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.groupInfoGrid dt {
+  margin: 0 0 5px;
+  color: rgba(244, 244, 245, 0.5);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.groupInfoGrid dd {
+  margin: 0;
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: rgba(244, 244, 245, 0.58);
-  font-size: 0.78rem;
-  font-weight: 700;
+  color: rgba(248, 250, 252, 0.9);
+  font-weight: 850;
+}
+
+.groupFocusList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.groupFocusList li {
+  padding: 0.48rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  background: rgba(52, 211, 153, 0.07);
+  color: rgba(236, 253, 245, 0.84);
+  font-size: 0.8rem;
+  font-weight: 850;
+}
+
+.groupJoin {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0.72rem 0.95rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(52, 211, 153, 0.28);
+  background: rgba(52, 211, 153, 0.08);
+  color: #a7f3d0;
+  font-weight: 900;
+  text-decoration: none;
+  transition: transform 200ms var(--ease), border-color 200ms var(--ease), background 200ms var(--ease);
+}
+
+.groupJoin:hover {
+  transform: translateY(-1px);
+  border-color: rgba(52, 211, 153, 0.42);
+  background: rgba(52, 211, 153, 0.12);
+}
+
+.groupJoin span:last-child {
+  color: rgba(244, 244, 245, 0.68);
+  font-size: 0.82rem;
 }
 
 .groupArrow {

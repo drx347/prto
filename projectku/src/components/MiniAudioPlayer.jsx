@@ -97,13 +97,34 @@ const MiniAudioPlayer = forwardRef(function MiniAudioPlayer(
     };
   }, [tracks.length]);
 
-  const playFromGesture = () => {
+  const playFromGesture = ({ mutedFallback = false } = {}) => {
     const el = audioRef.current;
     if (!el || !track) return false;
 
     el.muted = false;
     el.volume = clampMusicVolume(volume);
-    el.play().catch(() => {});
+    const playAttempt = el.play();
+
+    if (playAttempt?.catch) {
+      playAttempt.catch(() => {
+        if (!mutedFallback) {
+          setPlaying(false);
+          return;
+        }
+
+        el.muted = true;
+        el.volume = clampMusicVolume(volume);
+        el.play()
+          .then(() => {
+            window.setTimeout(() => {
+              el.muted = false;
+              el.volume = clampMusicVolume(volume);
+            }, 120);
+          })
+          .catch(() => setPlaying(false));
+      });
+    }
+
     return true;
   };
 

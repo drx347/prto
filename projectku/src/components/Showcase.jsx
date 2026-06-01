@@ -367,18 +367,69 @@ function TechCard({ skill, delayMs }) {
 }
 
 function GroupCard({ item, delayMs }) {
+  const href = item.inviteUrl ?? item.href;
+  const inviteLabel =
+    item.inviteLabel ?? href?.replace(/^mailto:/, "").replace(/^https?:\/\//, "");
+
   return (
     <Reveal delayMs={delayMs}>
-      <a className="groupCard" href={item.href} target="_blank" rel="noreferrer">
-        <span className="groupIcon" aria-hidden="true">
-          <Icon name="globe" />
-        </span>
-        <span className="groupMain">
-          <span className="groupLabel">{item.label}</span>
-          <span className="groupHref">{item.href.replace(/^mailto:/, "").replace(/^https?:\/\//, "")}</span>
-        </span>
-        <span className="groupArrow" aria-hidden="true">↗</span>
-      </a>
+      <article className="groupCard">
+        <div className="groupHeader">
+          <span className="groupIcon" aria-hidden="true">
+            <Icon name="globe" />
+          </span>
+          <div className="groupHeading">
+            <p className="groupEyebrow">{item.affiliation}</p>
+            <h3 className="groupLabel">{item.name ?? item.label}</h3>
+          </div>
+        </div>
+
+        {item.summary ? <p className="groupLead">{item.summary}</p> : null}
+
+        {item.description?.length ? (
+          <div className="groupDescription">
+            {item.description.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+        ) : null}
+
+        <dl className="groupInfoGrid">
+          {item.createdAt ? (
+            <div>
+              <dt>Dibuat</dt>
+              <dd>{item.createdAt}</dd>
+            </div>
+          ) : null}
+          {item.affiliation ? (
+            <div>
+              <dt>Network</dt>
+              <dd>{item.affiliation}</dd>
+            </div>
+          ) : null}
+          {inviteLabel ? (
+            <div>
+              <dt>Invite</dt>
+              <dd>{inviteLabel}</dd>
+            </div>
+          ) : null}
+        </dl>
+
+        {item.focus?.length ? (
+          <ul className="groupFocusList" aria-label="Fokus SyncedC0de">
+            {item.focus.map((focus) => (
+              <li key={focus}>{focus}</li>
+            ))}
+          </ul>
+        ) : null}
+
+        {href ? (
+          <a className="groupJoin" href={href} target="_blank" rel="noreferrer">
+            <span>Join Discord</span>
+            <span>{inviteLabel}</span>
+          </a>
+        ) : null}
+      </article>
     </Reveal>
   );
 }
@@ -528,16 +579,13 @@ export default function Showcase({
           ) : null}
 
           {tab === "group" ? (
-            <div className="groupGrid" aria-label="Group links">
-              {[
-                ...(profile.discordInvite
-                  ? [{ label: "Discord", href: profile.discordInvite }]
-                  : []),
-                ...profile.socials.filter((item) =>
-                  ["GitHub", "LinkedIn", "Twitter"].includes(item.label)
-                ),
-              ].map((item, idx) => (
-                <GroupCard key={item.href} item={item} delayMs={idx * 60} />
+            <div className="groupGrid" aria-label="Groups">
+              {(profile.groups ?? []).map((item, idx) => (
+                <GroupCard
+                  key={item.inviteUrl ?? item.name ?? idx}
+                  item={item}
+                  delayMs={idx * 60}
+                />
               ))}
             </div>
           ) : null}

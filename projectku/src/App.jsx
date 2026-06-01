@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./Pages/Home";
@@ -82,6 +82,7 @@ export default function App() {
     title: "",
     detail: "",
   });
+  const audioPlayerRef = useRef(null);
   const hideNowPlayingTimerRef = useRef(0);
   const lastAnnouncedTrackIdRef = useRef(null);
 
@@ -104,6 +105,14 @@ export default function App() {
       hideNowPlayingTimerRef.current = 0;
     }, 4200);
   };
+
+  const handleEnter = useCallback(() => {
+    audioPlayerRef.current?.playFromGesture?.({ mutedFallback: true });
+    setEntered(true);
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }
+  }, []);
 
   useEffect(() => {
     if (isMobileUi) import("./ui/mobile/mobile.css");
@@ -167,8 +176,9 @@ export default function App() {
         ].join(" ")}
       >
         <MiniAudioPlayer
+          ref={audioPlayerRef}
           tracks={musicTracks}
-          autoPlay
+          autoPlay={entered}
           onTrackChange={(track, meta) => {
             setPlayerSnapshot({
               track,
@@ -198,10 +208,7 @@ export default function App() {
 
         <WelcomeScreen
           entered={entered}
-          onEnter={() => {
-            setEntered(true);
-            if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "instant" });
-          }}
+          onEnter={handleEnter}
         />
 
         {entered && (

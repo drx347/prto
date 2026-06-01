@@ -10,6 +10,26 @@ export const profile = {
   aboutBadges: [],
   discordHandle: "@voixera",
   discordInvite: "https://discord.com/users/975269168184168539",
+  groups: [
+    {
+      name: "SyncedC0de",
+      createdAt: "20 Mei 2026",
+      affiliation: "Part of A7OMIC",
+      inviteLabel: "discord.gg/getsades",
+      inviteUrl: "https://discord.gg/getsades",
+      summary:
+        "SyncedC0de adalah grup komunitas yang dibuat sebagai ruang belajar, ngobrol, dan kolaborasi seputar coding serta project digital.",
+      description: [
+        "Grup ini dibuat pada 20 Mei 2026 dan menjadi bagian dari A7OMIC. SyncedC0de berfokus pada suasana yang santai tapi tetap produktif, tempat member bisa saling bertukar ide, membahas problem teknis, dan mengembangkan project bersama.",
+        "Di dalamnya, pembahasan bisa mencakup web development, Discord bot, scripting, eksperimen UI, sampai proses membangun project dari ide mentah menjadi sesuatu yang bisa dipakai.",
+      ],
+      focus: [
+        "Diskusi coding dan problem solving",
+        "Kolaborasi project web, bot, dan scripting",
+        "Tempat belajar bareng di bawah A7OMIC",
+      ],
+    },
+  ],
   education: [
     {
       period: "2026 - Present",

@@ -1126,8 +1126,51 @@
   }
 
   .groupCard {
-    min-height: 74px;
-    padding: 14px;
+    gap: 14px;
+    min-height: 0;
+    padding: 16px;
+  }
+
+  .groupHeader {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .groupIcon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .groupLabel {
+    font-size: clamp(1.72rem, 11vw, 2.45rem);
+  }
+
+  .groupLead {
+    font-size: 0.94rem;
+    line-height: 1.62;
+  }
+
+  .groupDescription p {
+    font-size: 0.88rem;
+    line-height: 1.65;
+  }
+
+  .groupInfoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .groupFocusList {
+    gap: 7px;
+  }
+
+  .groupFocusList li {
+    font-size: 0.74rem;
+  }
+
+  .groupJoin {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
   }
 }
 
@@ -1166,5 +1209,125 @@
   .eduDetails {
     font-size: 0.9rem;
     line-height: 1.55;
+  }
+}
+
+/* Automatic welcome splash responsive pass */
+@media (max-width: 520px) {
+  .welcomeScreen {
+    --welcome-player-space: clamp(94px, 15vh, 118px);
+    padding-top: calc(12px + var(--safe-top));
+    padding-bottom: calc(12px + var(--safe-bottom) + var(--welcome-player-space));
+  }
+
+  .welcomeThemeScene::before {
+    inset: 10px !important;
+    background-size: 34px 34px !important;
+  }
+
+  .welcomeThemeScene::after {
+    opacity: 0.24;
+  }
+
+  .welcomeInner {
+    width: min(100%, 430px) !important;
+    gap: 10px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .welcomeLoader {
+    width: 92px;
+    height: 92px;
+    margin-bottom: 2px;
+  }
+
+  .welcomeLoaderRing {
+    inset: 7px;
+  }
+
+  .welcomeLoaderRingDelay {
+    inset: 19px;
+  }
+
+  .welcomeLoaderCore {
+    width: 26px;
+    height: 26px;
+  }
+
+  .welcomeKicker {
+    font-size: 0.78rem;
+  }
+
+  .welcomeTitle {
+    max-width: 12ch !important;
+    gap: 4px !important;
+  }
+
+  .welcomeTitleTop {
+    font-size: clamp(2.35rem, 14vw, 3.6rem) !important;
+    line-height: 0.94;
+  }
+
+  .welcomeTitleBottom {
+    font-size: clamp(2.65rem, 16vw, 4rem) !important;
+    line-height: 0.92;
+  }
+
+  .welcomeLead {
+    max-width: 30ch;
+    font-size: 0.86rem;
+    line-height: 1.55;
+  }
+
+  .welcomeIcons {
+    gap: 8px !important;
+    margin-top: 2px !important;
+  }
+
+  .welcomeIconBtn {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .welcomeIconBtn svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .welcomeAuto {
+    width: min(250px, 72vw);
+    gap: 9px !important;
+  }
+
+  .welcomeProgressTrack {
+    height: 3px;
+  }
+
+  .welcomeStatus {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .welcomeLoader {
+    width: 82px;
+    height: 82px;
+  }
+
+  .welcomeLoaderRingDelay {
+    inset: 17px;
+  }
+
+  .welcomeTitleTop {
+    font-size: clamp(2.05rem, 13vw, 3rem) !important;
+  }
+
+  .welcomeTitleBottom {
+    font-size: clamp(2.32rem, 15vw, 3.45rem) !important;
+  }
+
+  .welcomeLead {
+    font-size: 0.8rem;
   }
 }
